@@ -4,3 +4,4 @@
 <g:link controller="macd" id="${params.id}" role="button" class="btn btn-success btn-small">MACD</g:link>
 <g:link controller="rsi" id="${params.id}" role="button" class="btn btn-success btn-small">RSI</g:link>
 <g:link controller="cci" id="${params.id}" role="button" class="btn btn-success btn-small">CCI</g:link>
+<g:link controller="aaron" id="${params.id}" role="button" class="btn btn-success btn-small">Aaron</g:link>

@@ -4,17 +4,11 @@ import com.netnumeri.server.finance.finpojo.Instrument
 
 public class AaronUpOverPeriodIndicator extends Indicator {
 
-    int period;
-
     public AaronUpOverPeriodIndicator(Instrument instrument, String name, Integer param1) {
         super(instrument, name);
-        period = param1;
-        build();
-    }
-
-    public void build() {
+        this.series = instrument.lowSeries()
         double[] highs = instrument.highSeries().convertToArray();
-        double[] ad = Aroon.aroonUpOverPeriod(highs, period);
+        double[] ad = Aroon.aroonUpOverPeriod(highs, param1);
         copyBackwords(ad);
     }
 
