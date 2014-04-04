@@ -7,15 +7,6 @@
     <meta name="layout" content="kickstart"/>
     <g:set var="entityName" value="${message(code: 'stock.label', default: 'Stock')}"/>
     <title><g:message code="default.show.label" args="[entityName]"/></title>
-
-    %{--<r:external uri="/css/metro-bootstrap.css"/>--}%
-
-    <r:external uri="/css/jquery.jqplot.css"/>
-    <r:external uri="/js/jquery.jqplot.js"/>
-    <r:external uri="/js/plugins/jqplot.dateAxisRenderer.min.js"/>
-    <r:external uri="/js/plugins/jqplot.ohlcRenderer.min.js"/>
-    <r:external uri="/js/plugins/jqplot.highlighter.min.js"/>
-
 </head>
 
 <body>

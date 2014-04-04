@@ -53,6 +53,13 @@
 
     <r:external uri="/js/html5.js"/>
 
+    <r:external uri="/css/jquery.jqplot.css"/>
+    <r:external uri="/js/jquery.jqplot.js"/>
+    <r:external uri="/js/plugins/jqplot.dateAxisRenderer.min.js"/>
+    <r:external uri="/js/plugins/jqplot.ohlcRenderer.min.js"/>
+    <r:external uri="/js/plugins/jqplot.highlighter.min.js"/>
+
+
 </head>
 
 <body>
