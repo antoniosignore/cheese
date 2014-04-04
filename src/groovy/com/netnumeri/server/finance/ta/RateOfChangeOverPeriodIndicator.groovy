@@ -4,14 +4,10 @@ import com.netnumeri.server.finance.beans.TimeSeries
 
 public class RateOfChangeOverPeriodIndicator extends Indicator {
 
-    int period
-
-    public RateOfChangeOverPeriodIndicator(TimeSeries instrument, String name, Integer period) {
-        super(instrument, name);
-        this.period = period;
-        double[] ad = Oscillators.rateOfChangePeriod(
-                instrument.convertToArray(),
-                (int) period);
+    public RateOfChangeOverPeriodIndicator(TimeSeries series, String name, Integer period) {
+        super(series, name);
+        this.series = series
+        double[] ad = Oscillators.rateOfChangePeriod(series.convertToArray(), (int) period);
         copyBackwords(ad);
     }
 

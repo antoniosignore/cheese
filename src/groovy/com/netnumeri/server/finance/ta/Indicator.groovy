@@ -26,7 +26,7 @@ public abstract class Indicator extends TimeSeries {
 
     public Indicator(Instrument instrument, String name) {
         super(name);
-        series = instrument.closeSeries
+        series = instrument.closeSeries()
         this.instrument = instrument;
     }
 

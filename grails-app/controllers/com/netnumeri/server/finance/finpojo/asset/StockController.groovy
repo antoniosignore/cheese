@@ -66,79 +66,45 @@ class StockController {
         for (int i = 0; i < list.size(); i++) {
             UserIndicators ui = list.get(i);
             if (ui.type == IndicatorEnum.SimpleMovingAverage) {
-
                 ui.indicator = new SMAIndicator(closes, "Simple Moving Average", ui.integer1);
-
             } else if (ui.type == IndicatorEnum.PriceChannelUpper) {
-
                 ui.indicator = new PriceChannelUpIndicator(closes, "PCUpper", ui.integer1, ui.double2);
-
             } else if (ui.type == IndicatorEnum.PriceChannelLower) {
-
                 ui.indicator = new PriceChannelLowerIndicator(closes, "PCLower", ui.integer1, ui.double2);
-
             } else if (ui.type == IndicatorEnum.WeightedMovingAverage) {
-
                 ui.indicator = new WMAIndicator(closes, "Weighted Moving Average", ui.integer1);
-
             } else if (ui.type == IndicatorEnum.SingularSpectrumFirstComponent) {
-
                 List<Integer> components = [0]
                 ui.indicator = new SSAComponentsIndicator(closes, "SSA-0", ui.integer1, components);
-
             } else if (ui.type == IndicatorEnum.SingularSpectrumSecondComponent) {
-
                 List<Integer> components = [1]
                 ui.indicator = new SSAComponentsIndicator(closes, "SSA-1", ui.integer1, components);
-
             } else if (ui.type == IndicatorEnum.SingularSpectrumSecondComponent) {
-
                 List<Integer> components = [2]
                 ui.indicator = new SSAComponentsIndicator(closes, "SSA-2", ui.integer1, components);
-
             } else if (ui.type == IndicatorEnum.SingularSpectrumThirdComponent) {
-
                 List<Integer> components = [0, 1]
                 ui.indicator = new SSAComponentsIndicator(closes, "SSA-01", ui.integer1, components);
-
             } else if (ui.type == IndicatorEnum.SingularSpectrumSecondThirdComponent) {
-
                 List<Integer> components = [1, 2]
                 ui.indicator = new SSAComponentsIndicator(closes, "SSA-12", ui.integer1, components);
-
             } else if (ui.type == IndicatorEnum.SingularSpectrumPrediction) {
-
                 List<Integer> components = [0, 1, 2]
                 ui.indicator = new SSASeriesPredictionIndicator(closes, "SSA-12", ui.integer1, 10, components, 10);
-
             } else if (ui.type == IndicatorEnum.Normalized) {
-
                 ui.indicator = new NormalizedSeriesIndicator(closes, "SSA-01");
-
             } else if (ui.type == IndicatorEnum.UpperBollingerBand) {
-
                 ui.indicator = new BollingerBandUpIndicator(closes, "BB-Upper", ui.integer1, ui.double1);
-
             } else if (ui.type == IndicatorEnum.LowerBollingerBand) {
-
                 ui.indicator = new BollingerBandLowerIndicator(closes, "BB-Lower", ui.integer1, ui.double1);
-
             } else if (ui.type == IndicatorEnum.SimpleMovingVariance) {
-
                 ui.indicator = new SimpleMovingVarianceIndicator(closes, "Simple Moving variance", ui.integer1);
-
             } else if (ui.type == IndicatorEnum.Momentum) {
-
-//                ui.indicator = new MomentumPctPeriodIndicator(closes, "Momentum", ui.integer1)
-
+                ui.indicator = new MomentumPctPeriodIndicator(closes, "Momentum", ui.integer1)
             } else if (ui.type == IndicatorEnum.MACD) {
-
                 ui.indicator = new MACDIndicator(closes, "MACD", ui.integer1, ui.integer2)
-
             } else if (ui.type == IndicatorEnum.MACDSignal) {
-
                 ui.indicator = new MACDSignal(closes, "MACD-Signal", ui.integer1, ui.integer2, ui.integer3)
-
             } else if (ui.type == IndicatorEnum.RateOfChange) {
 
                 ui.indicator = new RateOfChangeOverPeriodIndicator(closes, "Rate of Change", ui.integer1)

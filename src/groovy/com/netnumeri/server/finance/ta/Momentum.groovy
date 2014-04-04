@@ -152,15 +152,15 @@ public class Momentum {
         else return;
     }
 
-    private static void validateMomentumStandardParameters(double[] prices, int i) {
-        if (prices == null || prices.length == 0)
+    private static void validateMomentumStandardParameters(double[] highs, int i) {
+        if (highs == null || highs.length == 0)
             throw new IllegalArgumentException("The array of prices must contain at least one element");
-        for (int j = 0; j < prices.length; j++)
-            if (prices[j] < 0.0D)
+        for (int j = 0; j < highs.length; j++)
+            if (highs[j] < 0.0D)
                 throw new IllegalArgumentException("An element of the highs array is a strictly negative number.");
         if (i < 0)
             throw new IllegalArgumentException("The nDay parameter must me a strictly positive number (" + i + "< 0)");
-        if (i > prices.length)
+        if (i > highs.length)
             throw new IllegalArgumentException("The nDay value must not exceed the length of the prices period");
         else return;
     }
