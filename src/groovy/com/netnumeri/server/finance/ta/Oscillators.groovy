@@ -70,6 +70,9 @@ public class Oscillators implements Serializable {
         if (closePrice < 0.0D) {
             throw new IllegalArgumentException("The closing price of an asset must have been positive.");
         }
+
+        println "\n\n\n\n\n*******************\npriceNDaysAgo = " + priceNDaysAgo
+
         if (priceNDaysAgo < 0.0D) {
             throw new IllegalArgumentException("The price n days ago of an asset must have been positive.");
         } else {

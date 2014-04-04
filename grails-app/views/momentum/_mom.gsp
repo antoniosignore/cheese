@@ -3,7 +3,7 @@
 <script class="code" language="javascript" type="text/javascript">
     $(document).ready(function () {
         var plot2 = $.jqplot('chart2-${StockUtils.lastDate(stockInstance)}',
-                [   normalized${StockUtils.lastDate(stockInstance)},
+                [
                     mom${StockUtils.lastDate(stockInstance)}], {
                     seriesDefaults: {yaxis: 'yaxis'},
                     title: {
@@ -57,7 +57,7 @@
                 });
     });
 
-    normalized${StockUtils.lastDate(stockInstance)} = ${stockInstance.indicators.get("normalized").jqPlot};
+    %{--normalized${StockUtils.lastDate(stockInstance)} = ${stockInstance.indicators.get("normalized").jqPlot};--}%
     mom${StockUtils.lastDate(stockInstance)} = ${stockInstance.indicators.get("mom").jqPlot};
 
 </script>

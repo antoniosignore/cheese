@@ -21,13 +21,13 @@
     <r:require modules="raphael"/>
     <r:require modules="application"/>
 
+
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
     <%-- For Javascript see end of body --%>
-
 
     <r:external uri="/js/masonry.pkgd.min.js"/>
 

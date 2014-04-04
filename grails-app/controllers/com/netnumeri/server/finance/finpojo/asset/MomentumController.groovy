@@ -31,8 +31,8 @@ class MomentumController {
         Date a = DateUtils.today()
         dailyService.refreshStock(stockInstance, da, a)
         TimeSeries closeSeries = stockInstance.buildCloseSeries()
-        stockInstance.indicators.put("normalized", new NormalizedSeriesIndicator(closeSeries, "Normalized"))
         stockInstance.indicators.put("mom", new MomentumPctPeriodIndicator(closeSeries, "Momentum", 10))
+        stockInstance.indicators.put("normalized", new NormalizedSeriesIndicator(closeSeries, "Normalized"))
 
         Strategy strategy = new SSASignal("test", stockInstance, da, a);
 
