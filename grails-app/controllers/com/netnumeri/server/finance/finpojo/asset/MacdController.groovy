@@ -16,13 +16,13 @@ class MacdController {
 
     def dailyService
 
-    static allowedMethods = [show: "GET", update: "POST", delete: "POST"]
+    static allowedMethods = [indicator: "GET"]
 
     def index() {
-        redirect(action: "show", params: params)
+        redirect(action: "indicator", params: params)
     }
 
-    def show() {
+    def indicator() {
 
         def stockInstance = Stock.get(params.id as Long)
         if (!stockInstance) {

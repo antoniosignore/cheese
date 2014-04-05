@@ -17,7 +17,6 @@
 <section id="show-stock" class="first">
     <g:render template="../stock/stock" />
 
-
     <div id="messages">
         <g:render template="/common/candlestick"/>
         <g:render template="aaron"/>

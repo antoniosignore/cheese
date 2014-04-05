@@ -40,9 +40,12 @@
         </div>
 
         <div class="span8">
-            <iframe width="100%" scrolling="no" height="300" frameborder="0"
-                    src="https://maps.google.com/maps?q=24+Sion+Court+Sion+Road+Twickenham+TW13DD&hl=en&sll=51.483419,-0.23175&sspn=0.135977,0.41851&t=h&hnear=Sion+Court,+Sion+Rd,+Twickenham+TW1+3DD,+United+Kingdom&z=16"
-                    marginwidth="0" marginheight="0"></iframe>
+
+            <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=24+Sion+Court+Sion+Road+Twickenham+TW13DD&amp;hl=en&amp;sll=51.483419,-0.23175&amp;sspn=0.135977,0.41851&amp;t=h&amp;hnear=Sion+Court,+Sion+Rd,+Twickenham+TW1+3DD,+United+Kingdom&amp;ie=UTF8&amp;hq=&amp;ll=51.448179,-0.322992&amp;spn=0.008505,0.026157&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?q=24+Sion+Court+Sion+Road+Twickenham+TW13DD&amp;hl=en&amp;sll=51.483419,-0.23175&amp;sspn=0.135977,0.41851&amp;t=h&amp;hnear=Sion+Court,+Sion+Rd,+Twickenham+TW1+3DD,+United+Kingdom&amp;ie=UTF8&amp;hq=&amp;ll=51.448179,-0.322992&amp;spn=0.008505,0.026157&amp;z=14&amp;iwloc=A&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+
+            %{--<iframe width="100%" scrolling="no" height="300" frameborder="0"--}%
+                    %{--src="http://maps.google.ca/maps?f=q&source=s_q&hl=en&geocode=&q=123+Future+Ave,San+Francisco,+CA+94107&ie=UTF8&hq=&hnear=Downtown,San+Francisco,+CA+94107&z=12&iwloc=near&output=embed"--}%
+                    %{--marginwidth="0" marginheight="0"></iframe>--}%
         </div>
     </div>
 </section>
