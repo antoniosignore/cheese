@@ -9,7 +9,6 @@ import com.netnumeri.server.finance.strategy.Strategy
 import com.netnumeri.server.finance.ta.*
 import com.netnumeri.server.finance.utils.DateUtils
 import com.netnumeri.server.finance.utils.YahooUtils
-import com.netnumeri.server.utils.StockUtils
 import org.springframework.dao.DataIntegrityViolationException
 
 import java.text.SimpleDateFormat
@@ -106,38 +105,24 @@ class StockController {
             } else if (ui.type == IndicatorEnum.MACDSignal) {
                 ui.indicator = new MACDSignal(closes, "MACD-Signal", ui.integer1, ui.integer2, ui.integer3)
             } else if (ui.type == IndicatorEnum.RateOfChange) {
-
                 ui.indicator = new RateOfChangeOverPeriodIndicator(closes, "Rate of Change", ui.integer1)
-
             } else if (ui.type == IndicatorEnum.RelativeStrengthIndex) {
-
                 ui.indicator = new RSIIndicator(closes, "RSI", ui.integer1)
-
             } else if (ui.type == IndicatorEnum.RelativeStrengthIndex2) {
-
                 ui.indicator = new RSI2Indicator(closes, "RSI", ui.integer1)
-
             } else if (ui.type == IndicatorEnum.CommodityChannelIndicator) {
-
                 ui.indicator = new CommodityChannelIndicator(closes, "CCI", ui.integer1)
-
             } else if (ui.type == IndicatorEnum.Oscillator) {
 
 //                userIndicator.indicator =
 //                    new Os(closes, "PCI-" + userIndicator.order + "-" + userIndicator.k, userIndicator.order, userIndicator.k)
 
             } else if (ui.type == IndicatorEnum.PriceChannelUpper) {
-
                 ui.indicator = new PriceChannelUpIndicator(closes, "PCI", ui.integer1, ui.double2)
-
             } else if (ui.type == IndicatorEnum.PriceChannelLower) {
-
                 ui.indicator = new PriceChannelLowerIndicator(closes, "PCI", ui.integer1, ui.double2)
-
             } else if (ui.type == IndicatorEnum.TrueChange) {
-
                 ui.indicator = new TrueRangeOverPeriodIndicator(stockInstance, "TrueRange")
-
 //            } else if (ui.type == IndicatorEnum.AverageTrueChange) {
 //
 //                ui.indicator =

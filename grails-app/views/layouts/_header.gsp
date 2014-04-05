@@ -10,5 +10,8 @@
     <g:link controller="movingVariance" action="indicator" id="${params.id}" role="button" class="btn btn-success btn-small">Moving Variance</g:link>
     <g:link controller="momentum" action="indicator" id="${params.id}" role="button" class="btn btn-success btn-small">Momentum</g:link>
     <g:link controller="roc" action="indicator" id="${params.id}" role="button" class="btn btn-success btn-small">ROC</g:link>
+    <g:link controller="trueRange" action="indicator" id="${params.id}" role="button" class="btn btn-success btn-small">True Range</g:link>
+    <g:link controller="moneyFlow" action="indicator" id="${params.id}" role="button" class="btn btn-success btn-small">Money Flow</g:link>
+    <g:link controller="accumulateDistribution" action="indicator" id="${params.id}" role="button" class="btn btn-success btn-small">Accumulate Distribution</g:link>
 
 </g:if>

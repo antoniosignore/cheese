@@ -10,6 +10,8 @@ public class TrueRangeOverPeriodIndicator extends Indicator {
     public TrueRangeOverPeriodIndicator(Instrument instrument, String name) {
         super(instrument, name);
 
+        //         this.series = instrument.lowSeries()
+
         double[] highs = instrument.highSeries().convertToArray();
         double[] lows = instrument.lowSeries().convertToArray();
         double[] closes = instrument.closeSeries().convertToArray();

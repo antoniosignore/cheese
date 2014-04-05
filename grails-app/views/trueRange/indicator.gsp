@@ -12,20 +12,14 @@
 </head>
 
 <body>
-
 <section id="show-stock" class="first">
-    <g:render template="../stock/stock" />
 
+    <g:render template="../stock/stock" />
 
     <div id="messages">
         <g:render template="/common/candlestick"/>
-        <g:render template="mv"/>
+        <g:render template="rsi"/>
     </div>
-
-    %{--<dtmc:stocks list="${strategyInstance.stocksList}"/>--}%
-
 </section>
-
 </body>
-
 </html>

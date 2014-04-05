@@ -18,7 +18,7 @@
 
     <div id="messages">
         <g:render template="/common/candlestick"/>
-        <g:render template="bb"/>
+        <g:render template="pc"/>
     </div>
 
     %{--<dtmc:stocks list="${strategyInstance.stocksList}"/>--}%

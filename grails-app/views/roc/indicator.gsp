@@ -19,7 +19,7 @@
 
     <div id="messages">
         <g:render template="/common/candlestick"/>
-        <g:render template="rsi"/>
+        <g:render template="roc"/>
     </div>
 
     %{--<dtmc:stocks list="${strategyInstance.stocksList}"/>--}%

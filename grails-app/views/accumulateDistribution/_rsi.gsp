@@ -4,7 +4,7 @@
     $(document).ready(function () {
         var plot2 = $.jqplot('chart2-${StockUtils.lastDate(stockInstance)}',
                 [   normalized${StockUtils.lastDate(stockInstance)},
-                    rsi${StockUtils.lastDate(stockInstance)}], {
+                    ad${StockUtils.lastDate(stockInstance)}], {
                     seriesDefaults: {yaxis: 'yaxis'},
                     title: {
                         text: '${StockUtils.dateTitle(stockInstance)}',
@@ -59,7 +59,7 @@
     });
 
     normalized${StockUtils.lastDate(stockInstance)} = ${stockInstance.indicators.get("normalized").jqPlot};
-    rsi${StockUtils.lastDate(stockInstance)} = ${stockInstance.indicators.get("rsi").jqPlot};
+    ad${StockUtils.lastDate(stockInstance)} = ${stockInstance.indicators.get("ad").jqPlot};
 
 </script>
 
