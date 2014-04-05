@@ -25,27 +25,23 @@
             <h1><g:message code="default.contact.address"/></h1>
             <address>
                 <strong>DTMC Central Ltd.</strong><br>
-                123 Future Ave<br>
-                San Francisco, CA 94107<br>
+                24 Sion Court<br>
+                Sion Road,<br>
+                Twickenham Middlesex TW13DD<br>
                 <br>
                 <strong><abbr title="Phone">Phone</abbr></strong>
-                (123) 456-7890
-                <br>
-
-                <strong><abbr title="Phone">Fax</abbr></strong>
-                +49 (0) 72 27 - 95 35 - 605
+                +49(176) 47569616
                 <br>
 
                 <strong><abbr title="Phone">Email</abbr></strong>
-                <a href="mailto:info@${meta(name: 'app.name')}.com">info@${meta(name: 'app.name')}.com</a>
+                <a href="mailto:antonio.signore@gmail.com">antonio.signore@gmail.com</a>
                 <br>
-
             </address>
         </div>
 
         <div class="span8">
             <iframe width="100%" scrolling="no" height="300" frameborder="0"
-                    src="http://maps.google.ca/maps?f=q&source=s_q&hl=en&geocode=&q=123+Future+Ave,San+Francisco,+CA+94107&ie=UTF8&hq=&hnear=Downtown,San+Francisco,+CA+94107&z=12&iwloc=near&output=embed"
+                    src="https://maps.google.com/maps?q=24+Sion+Court+Sion+Road+Twickenham+TW13DD&hl=en&sll=51.483419,-0.23175&sspn=0.135977,0.41851&t=h&hnear=Sion+Court,+Sion+Rd,+Twickenham+TW1+3DD,+United+Kingdom&z=16"
                     marginwidth="0" marginheight="0"></iframe>
         </div>
     </div>
