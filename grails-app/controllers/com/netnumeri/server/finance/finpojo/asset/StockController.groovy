@@ -113,105 +113,53 @@ class StockController {
             } else if (ui.type == IndicatorEnum.CommodityChannelIndicator) {
                 ui.indicator = new CommodityChannelIndicator(closes, "CCI", ui.integer1)
             } else if (ui.type == IndicatorEnum.Oscillator) {
-
-//                userIndicator.indicator =
-//                    new Os(closes, "PCI-" + userIndicator.order + "-" + userIndicator.k, userIndicator.order, userIndicator.k)
-
             } else if (ui.type == IndicatorEnum.PriceChannelUpper) {
                 ui.indicator = new PriceChannelUpIndicator(closes, "PCI", ui.integer1, ui.double2)
             } else if (ui.type == IndicatorEnum.PriceChannelLower) {
                 ui.indicator = new PriceChannelLowerIndicator(closes, "PCI", ui.integer1, ui.double2)
             } else if (ui.type == IndicatorEnum.TrueChange) {
                 ui.indicator = new TrueRangeOverPeriodIndicator(stockInstance, "TrueRange")
-//            } else if (ui.type == IndicatorEnum.AverageTrueChange) {
-//
-//                ui.indicator =
-//                    new TrueRangeOverPeriodIndicator(closes, "TrueRange")
-
             } else if (ui.type == IndicatorEnum.MoneyFlowOverPeriod) {
-
                 ui.indicator = new MoneyFlowOverPeriodIndicator(stockInstance, "Money flow", ui.integer1)
-
             } else if (ui.type == IndicatorEnum.AccumulateDistributionOverPeriod) {
-
                 ui.indicator = new AccumulateDistributionOverPeriodIndicator(stockInstance, "Accumulate Distribution", ui.integer1)
 
             } else if (ui.type == IndicatorEnum.ChaikinOscillatorOverPeriod) {
-
                 ui.indicator = new ChaikinOscillatorOverPeriodIndicator(stockInstance, "ChaikinOscillatorOverPeriodIndicator", ui.integer1)
-
             } else if (ui.type == IndicatorEnum.ChaikinMoneyFlowOverPeriod) {
-
                 ui.indicator = new ChaikinMoneyFlowOverPeriodIndicator(stockInstance, "ChaikinMoneyFlowOverPeriodIndicator", ui.integer1)
-
             } else if (ui.type == IndicatorEnum.AroonOscillatorOverPeriod) {
-
                 ui.indicator = new AaronOscillatorOverPeriodIndicator(stockInstance, "AaronOscillatorOverPeriodIndicator", ui.integer1)
-
             } else if (ui.type == IndicatorEnum.AroonDownOverPeriod) {
-
                 ui.indicator = new AaronDownOverPeriodIndicator(stockInstance, "Aaron Down Over Period Indicator", ui.integer1)
-
             } else if (ui.type == IndicatorEnum.AroonUpOverPeriod) {
-
                 ui.indicator = new AaronUpOverPeriodIndicator(stockInstance, "Aaron Up Over Period Indicator", ui.integer1)
-
             } else if (ui.type == IndicatorEnum.TrueRangePeriod) {
-
                 ui.indicator = new TrueRangeOverPeriodIndicator(stockInstance, "true Range Over Period Indicator")
-
             } else if (ui.type == IndicatorEnum.kFastStochasticPeriod) {
-
                 ui.indicator = new KFastStochasticIndicator(stockInstance, "K Fast Stochastic Indicator", ui.integer1)
-
             } else if (ui.type == IndicatorEnum.dStochastic) {
-
                 ui.indicator = new DStochasticIndicator(stockInstance, "D Stochastic Indicator", ui.integer1, ui.integer2, ui.integer3)
-
             } else if (ui.type == IndicatorEnum.DStochasticSmoothed) {
-
                 ui.indicator = new DStochasticSmoothedIndicator(stockInstance, "D Stochastic Smoothed Indicator", ui.integer1, ui.integer2)
-
             } else if (ui.type == IndicatorEnum.ChaikinVolatility) {
-
                 ui.indicator = new ChaikinVolatilityIndicator(stockInstance, "Chaikin Volatility Indicator", ui.integer1, ui.integer2)
-
-            } else if (ui.type == IndicatorEnum.MACDSignal) {
-
-                ui.indicator = new MACDSignal(closes, "MACD Signal Indicator", ui.integer1, ui.integer2, ui.integer3)
-
             } else if (ui.type == IndicatorEnum.PlusDirectionalMovementPeriod) {
-
                 ui.indicator = new PlusDMIndicator(stockInstance, "Plus DMI Indicator")
-
             } else if (ui.type == IndicatorEnum.RateOfChangePeriod) {
-
                 ui.indicator = new RateOfChangeOverPeriodIndicator(closes, "Rate of Change Indicator", ui.integer1)
-
             } else if (ui.type == IndicatorEnum.Kairi) {
-
                 ui.indicator = new KairiIndicator(stockInstance, "Kairi Indicator", ui.integer1)
-
             } else if (ui.type == IndicatorEnum.MomentumPctPeriod) {
-
                 ui.indicator = new MomentumPctPeriodIndicator(closes, "Momentum Pct Period Indicator", ui.integer1)
-
             } else if (ui.type == IndicatorEnum.CommodityChannelIndexOverPeriod) {
-
                 ui.indicator = new CommodityChannelIndicator(closes, "CCI", ui.integer1)
-
             } else if (ui.type == IndicatorEnum.MarketFacilitationIndexOverPeriod) {
-
                 ui.indicator = new MarketFacilitationIndexIndicator(stockInstance, "Market Facilitation Index Indicator")
-
             } else if (ui.type == IndicatorEnum.BalanceOfPowerOverPeriod) {
-
                 ui.indicator = new BalanceOfPowerIndicator(stockInstance, "Balance of Power Indicator")
-
             } else if (ui.type == IndicatorEnum.PriceActionOverPeriod) {
-
                 ui.indicator = new PriceActionOverPeriodIndicator(stockInstance, "Price action over integer1 indicator")
-
             }
         }
 
