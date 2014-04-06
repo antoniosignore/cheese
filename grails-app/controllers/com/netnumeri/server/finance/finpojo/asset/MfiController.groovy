@@ -8,7 +8,7 @@ import com.netnumeri.server.finance.ta.NormalizedSeriesIndicator
 import com.netnumeri.server.finance.ta.TrueRangeOverPeriodIndicator
 import com.netnumeri.server.finance.utils.DateUtils
 
-class MFIController {
+class MfiController {
 
     def dailyService
 
@@ -32,7 +32,7 @@ class MFIController {
         dailyService.refreshStock(stockInstance, da, a)
         TimeSeries closeSeries = stockInstance.buildCloseSeries()
         stockInstance.indicators.put("normalized", new NormalizedSeriesIndicator(closeSeries, "Normalized"))
-        stockInstance.indicators.put("mfi", new MarketFacilitationIndexIndicator(stockInstance, "Market Facilitation Index Indicator"))
+        stockInstance.indicators.put("mfi", new MarketFacilitationIndexIndicator(stockInstance, "Market Facilitation Index"))
 
         [
                 startDate: da,
