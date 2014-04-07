@@ -11,10 +11,6 @@ public class ChaikinVolatilityIndicator extends Indicator {
         super(instrument, name);
         this.smoothing = smoothing;
         this.period = period;
-        build();
-    }
-
-    public void build() {
         double[] highs = instrument.highSeries().convertToArray();
         double[] lows = instrument.lowSeries().convertToArray();
         double[] ad = Volatility.chaikinVolatility(highs, lows, (int) smoothing, period);

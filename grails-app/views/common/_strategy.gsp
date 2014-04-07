@@ -2,7 +2,7 @@
 
 <script class="code" language="javascript" type="text/javascript">
     $(document).ready(function () {
-        var plot2 = $.jqplot('chart', [ohlc], {
+        var plot2 = $.jqplot('chart', [ohlc, buysignals, sellsignals], {
             seriesDefaults: {yaxis: 'yaxis'},
             axes: {
                 xaxis: {
@@ -72,6 +72,14 @@
     });
 
     ohlc = ${StockUtils.getCandleStickPlot(stockInstance)}
+
+    <g:if test="$strategyInstance"
+    buysignals = ${StockUtils.getBuySignals(strategyInstance)}
+    sellsignals =
+            ${StockUtils.getSellSignals(strategyInstance)}
+            %{--lower= ${stockInstance.indicators.get("lower").jqPlot}--}%
+            %{--upper= ${stockInstance.indicators.get("upper").jqPlot}--}%
+
     $(window).resize(function () {
         plot2.replot({ resetAxes: true });
     });

@@ -9,10 +9,6 @@ public class ChaikinMoneyFlowOverPeriodIndicator extends Indicator {
     public ChaikinMoneyFlowOverPeriodIndicator(Instrument instrument, String name, Integer period) {
         super(instrument, name);
         this.period = period;
-        build();
-    }
-
-    public void build() {
         double[] highs = instrument.highSeries().convertToArray();
         double[] lows = instrument.lowSeries().convertToArray();
         double[] closes = instrument.closeSeries().convertToArray();
