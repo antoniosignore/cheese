@@ -32,15 +32,12 @@ class ChaikinOscillatorController {
         dailyService.refreshStock(stockInstance, da, a)
         TimeSeries closeSeries = stockInstance.buildCloseSeries()
         stockInstance.indicators.put("normalized", new NormalizedSeriesIndicator(closeSeries, "Normalized"))
-        stockInstance.indicators.put("co", new ChaikinOscillatorOverPeriodIndicator(stockInstance, "ChaikinOscillatorOverPeriodIndicator", 10))
-
-        Strategy strategy = new SSASignal("test", stockInstance, da, a);
+        stockInstance.indicators.put("co", new ChaikinOscillatorOverPeriodIndicator(stockInstance, "ChaikinOscillatorOverPeriodIndicator", 0.9))
 
         [
                 startDate: da,
                 endDate: a,
-                stockInstance: stockInstance,
-                strategyInstance: strategy
+                stockInstance: stockInstance
         ]
     }
 }

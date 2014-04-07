@@ -14,18 +14,17 @@
     <g:link controller="moneyFlow" action="indicator" id="${params.id}" role="button" class="btn btn-success btn-small">Money Flow</g:link>
     <g:link controller="accumulateDistribution" action="indicator" id="${params.id}" role="button" class="btn btn-success btn-small">Accumulate Distribution</g:link>
 
-
     <g:link controller="chaikinMoneyFlow" action="indicator" id="${params.id}" role="button" class="btn btn-success btn-small">Chaikin Money Flow</g:link>
     <g:link controller="chaikinOscillator" action="indicator" id="${params.id}" role="button" class="btn btn-success btn-small">Chaikin Oscillator</g:link>
     <g:link controller="chaikinVolatility" action="indicator" id="${params.id}" role="button" class="btn btn-success btn-small">Chaikin Volatility</g:link>
     <g:link controller="trueRange" action="indicator" id="${params.id}" role="button" class="btn btn-success btn-small">True Range</g:link>
-    <g:link controller="kFastStochastic" action="indicator" id="${params.id}" role="button" class="btn btn-success btn-small">k Fast Stochastic</g:link>
-    <g:link controller="dStochastic" action="indicator" id="${params.id}" role="button" class="btn btn-success btn-small">d Stochastic</g:link>
-    <g:link controller="dStochasticSmoothed" action="indicator" id="${params.id}" role="button" class="btn btn-success btn-small">d Stochastic Smoothed</g:link>
+    <g:link controller="keyFastStochastic" action="indicator" id="${params.id}" role="button" class="btn btn-success btn-small">k Fast Stochastic</g:link>
+    <g:link controller="diStochastic" action="indicator" id="${params.id}" role="button" class="btn btn-success btn-small">d Stochastic</g:link>
+    <g:link controller="diStochasticSmoothed" action="indicator" id="${params.id}" role="button" class="btn btn-success btn-small">d Stochastic Smoothed</g:link>
     <g:link controller="plusDirectional" action="indicator" id="${params.id}" role="button" class="btn btn-success btn-small">Plus Directional</g:link>
     <g:link controller="momentumPct" action="indicator" id="${params.id}" role="button" class="btn btn-success btn-small">Momentum Pct</g:link>
     <g:link controller="mfi" action="indicator" id="${params.id}" role="button" class="btn btn-success btn-small">Market Facilitation Index</g:link>
-    <g:link controller="bop" action="indicator" id="${params.id}" role="button" class="btn btn-success btn-small">Balance of Power</g:link>
+    <g:link controller="balanceOfPower" action="indicator" id="${params.id}" role="button" class="btn btn-success btn-small">Balance of Power</g:link>
     <g:link controller="priceAction" action="indicator" id="${params.id}" role="button" class="btn btn-success btn-small">Price Action</g:link>
 
 

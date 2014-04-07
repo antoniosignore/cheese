@@ -62,7 +62,7 @@ public class TestIndicators {
         new PriceChannelLowerIndicator(closes, "PCI", indicatorOrder, k);
         new TrueRangeOverPeriodIndicator(stockInstance, "TrueRange");
         new AccumulateDistributionOverPeriodIndicator(stockInstance, "Accumulate Distribution", smoothing1);
-        new ChaikinOscillatorOverPeriodIndicator(stockInstance, "ChaikinOscillatorOverPeriodIndicator", 0);
+        new ChaikinOscillatorOverPeriodIndicator(stockInstance, "ChaikinOscillatorOverPeriodIndicator", 0.9);
         new ChaikinMoneyFlowOverPeriodIndicator(stockInstance, "ChaikinMoneyFlowOverPeriodIndicator", 10);
         new AaronOscillatorOverPeriodIndicator(stockInstance, "AaronOscillatorOverPeriodIndicator", period);
         new AaronDownOverPeriodIndicator(stockInstance, "Aaron Down Over Period Indicator", period);

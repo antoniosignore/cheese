@@ -4,15 +4,12 @@ import com.netnumeri.server.finance.finpojo.Instrument
 
 public class ChaikinOscillatorOverPeriodIndicator extends Indicator {
 
-    int smoothing;
-
-    public ChaikinOscillatorOverPeriodIndicator(Instrument instrument, String name, Integer smoothing) {
+    public ChaikinOscillatorOverPeriodIndicator(Instrument instrument, String name, double period) {
         super(instrument, name);
-        this.smoothing = smoothing;
         double[] highs = instrument.highSeries().convertToArray();
         double[] lows = instrument.lowSeries().convertToArray();
         double[] vols = instrument.volumeSeries().convertToArray();
-        double[] ad = AccumulateDistribute.chaikinOscillatorOverPeriod(highs, lows, vols, smoothing);
+        double[] ad = AccumulateDistribute.chaikinOscillatorOverPeriod(highs, lows, vols, period);
         copyBackwords(ad);
     }
 

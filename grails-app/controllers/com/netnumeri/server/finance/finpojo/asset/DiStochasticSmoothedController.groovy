@@ -3,12 +3,12 @@ package com.netnumeri.server.finance.finpojo.asset
 import com.netnumeri.server.finance.beans.TimeSeries
 import com.netnumeri.server.finance.strategy.SSASignal
 import com.netnumeri.server.finance.strategy.Strategy
-import com.netnumeri.server.finance.ta.KFastStochasticIndicator
+import com.netnumeri.server.finance.ta.DStochasticSmoothedIndicator
 import com.netnumeri.server.finance.ta.NormalizedSeriesIndicator
 import com.netnumeri.server.finance.ta.TrueRangeOverPeriodIndicator
 import com.netnumeri.server.finance.utils.DateUtils
 
-class KFastStochasticController {
+class DiStochasticSmoothedController {
 
     def dailyService
 
@@ -32,15 +32,12 @@ class KFastStochasticController {
         dailyService.refreshStock(stockInstance, da, a)
         TimeSeries closeSeries = stockInstance.buildCloseSeries()
         stockInstance.indicators.put("normalized", new NormalizedSeriesIndicator(closeSeries, "Normalized"))
-        stockInstance.indicators.put("kfs", new KFastStochasticIndicator(stockInstance, "K Fast Stochastic Indicator", 10))
-
-        Strategy strategy = new SSASignal("test", stockInstance, da, a);
+        stockInstance.indicators.put("dss", new DStochasticSmoothedIndicator(stockInstance, "D Stochastic Smoothed Indicator", 10,10))
 
         [
                 startDate: da,
                 endDate: a,
-                stockInstance: stockInstance,
-                strategyInstance: strategy
+                stockInstance: stockInstance
         ]
     }
 }

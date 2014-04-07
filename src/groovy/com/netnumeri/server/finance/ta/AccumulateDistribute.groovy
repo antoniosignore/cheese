@@ -124,8 +124,8 @@ public class AccumulateDistribute implements Serializable {
         return exponentiallyWeightedMovingAverage(ad10, smoothing) - exponentiallyWeightedMovingAverage(ad9, smoothing);
     }
 
-    public static double[] chaikinOscillatorOverPeriod(double[] highs, double[] lows, double[] volumes, double smoothing) {
-        if (smoothing < 0.0D || smoothing > 1.0D)
+    public static double[] chaikinOscillatorOverPeriod(double[] highs, double[] lows, double[] volumes, double period) {
+        if (period < 0.0D || period > 1.0D)
             throw new IllegalArgumentException("The value given for the period factor must lie within the closed interval [0,1].");
         if (highs.length < 10)
             throw new IllegalArgumentException("The high parameter must be given at least over the last 10 periods (i.e. must have a length greater than equal to 10).");
@@ -148,7 +148,7 @@ public class AccumulateDistribute implements Serializable {
                 ad5[j] = lows[i + j];
                 ad6[j] = volumes[i + j];
             }
-            ad3[i] = chaikinOscillator(ad4, ad5, ad6, smoothing);
+            ad3[i] = chaikinOscillator(ad4, ad5, ad6, period);
         }
         return ad3;
     }
@@ -196,20 +196,20 @@ public class AccumulateDistribute implements Serializable {
         return d / d1;
     }
 
-    public static double[] chaikinMoneyFlowOverPeriod(double[] highs, double[] lows, double[] closes, double[] volumes, int i) {
+    public static double[] chaikinMoneyFlowOverPeriod(double[] highs, double[] lows, double[] closes, double[] volumes, int period) {
         if (highs.length != lows.length || lows.length != volumes.length) {
             throw new IllegalArgumentException("The length of the high, low, and volume series must be the same.");
         }
-        if (i == 0 || i > highs.length) {
+        if (period == 0 || period > highs.length) {
             throw new IllegalArgumentException("The length of the period over which the indicator is evaluation must be a strictly positive integer which is less than or equal to the length of the array low, high, volume given.");
         }
-        double[] ad4 = new double[(lows.length - i) + 1];
-        double[] ad5 = new double[i];
-        double[] ad6 = new double[i];
-        double[] ad7 = new double[i];
-        double[] ad8 = new double[i];
-        for (int j = 0; j < (lows.length - i) + 1; j++) {
-            for (int k = 0; k < i; k++) {
+        double[] ad4 = new double[(lows.length - period) + 1];
+        double[] ad5 = new double[period];
+        double[] ad6 = new double[period];
+        double[] ad7 = new double[period];
+        double[] ad8 = new double[period];
+        for (int j = 0; j < (lows.length - period) + 1; j++) {
+            for (int k = 0; k < period; k++) {
                 ad5[k] = highs[j + k];
                 ad6[k] = lows[j + k];
                 ad7[k] = closes[j + k];

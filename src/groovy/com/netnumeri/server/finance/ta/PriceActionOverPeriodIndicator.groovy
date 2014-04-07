@@ -13,7 +13,7 @@ public class PriceActionOverPeriodIndicator extends Indicator {
         double[] highs = instrument.highSeries().convertToArray();
         double[] lows = instrument.lowSeries().convertToArray();
         double[] closes = instrument.closeSeries().convertToArray();
-        double[] opens = instrument.getOpenSeries().convertToArray();
+        double[] opens = instrument.openSeries().convertToArray();
         double[] ad = Filters.priceActionOverPeriod(highs, lows, closes, opens);
         copyBackwords(ad);
     }

@@ -125,7 +125,7 @@ class StockController {
                 ui.indicator = new AccumulateDistributionOverPeriodIndicator(stockInstance, "Accumulate Distribution", ui.integer1)
 
             } else if (ui.type == IndicatorEnum.ChaikinOscillatorOverPeriod) {
-                ui.indicator = new ChaikinOscillatorOverPeriodIndicator(stockInstance, "ChaikinOscillatorOverPeriodIndicator", ui.integer1)
+                ui.indicator = new ChaikinOscillatorOverPeriodIndicator(stockInstance, "ChaikinOscillatorOverPeriodIndicator", ui.double1)
             } else if (ui.type == IndicatorEnum.ChaikinMoneyFlowOverPeriod) {
                 ui.indicator = new ChaikinMoneyFlowOverPeriodIndicator(stockInstance, "ChaikinMoneyFlowOverPeriodIndicator", ui.integer1)
             } else if (ui.type == IndicatorEnum.AroonOscillatorOverPeriod) {
