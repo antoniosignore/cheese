@@ -1,6 +1,6 @@
 package com.netnumeri.server.finance.finpojo.derivative.equity;
 
-import com.netnumeri.server.entity.OptionType
+import com.netnumeri.server.enums.OptionType
 import com.netnumeri.server.finance.finpojo.Instrument
 import com.netnumeri.server.finance.finpojo.derivative.Derivative
 

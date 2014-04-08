@@ -1,7 +1,7 @@
 package com.netnumeri.server.utils;
 
 
-import com.netnumeri.server.entity.OptionType
+import com.netnumeri.server.enums.OptionType
 import com.netnumeri.server.finance.data.MaximumPainBean
 import com.netnumeri.server.finance.finpojo.derivative.equity.Vanilla
 

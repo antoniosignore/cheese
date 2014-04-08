@@ -1,6 +1,6 @@
 package com.netnumeri.server.finance.strategy
 
-import com.netnumeri.server.entity.OptionType
+import com.netnumeri.server.enums.OptionType
 import com.netnumeri.server.finance.finpojo.asset.Stock
 import com.netnumeri.server.finance.finpojo.derivative.equity.Vanilla
 import com.netnumeri.server.finance.utils.DateUtils

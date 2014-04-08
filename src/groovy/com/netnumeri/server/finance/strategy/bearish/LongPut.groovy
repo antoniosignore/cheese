@@ -1,6 +1,6 @@
 package com.netnumeri.server.finance.strategy.bearish
 
-import com.netnumeri.server.entity.OptionType
+import com.netnumeri.server.enums.OptionType
 import com.netnumeri.server.finance.finpojo.Bet
 import com.netnumeri.server.finance.finpojo.Forecast
 import com.netnumeri.server.finance.finpojo.Trade

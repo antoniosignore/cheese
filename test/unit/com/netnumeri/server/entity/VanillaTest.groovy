@@ -1,5 +1,6 @@
 package com.netnumeri.server.entity
 
+import com.netnumeri.server.enums.OptionType
 import com.netnumeri.server.finance.finpojo.derivative.equity.Vanilla
 import com.netnumeri.server.finance.utils.DateUtils
 

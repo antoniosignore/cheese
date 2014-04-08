@@ -8,6 +8,7 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Constructor;
@@ -35,11 +36,11 @@ public final class PatternFactory {
         _uniqueConstraints = new HashSet();
     }
 
-    public Iterable loadPatterns(InputStream stream)
+    public Iterable loadPatterns()
             throws ParserConfigurationException, IOException, SAXException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
-        Document document = builder.parse(stream);
+        Document document = builder.parse(new File("patterns.xml"));
         ArrayList result = new ArrayList();
         for (Node node = document.getFirstChild(); node != null; node = node.getNextSibling())
             if ("patterns".compareToIgnoreCase(node.getNodeName()) == 0)
@@ -72,6 +73,9 @@ public final class PatternFactory {
 
                 result.add(_currentPattern);
             } catch (Exception e) {
+
+                e.printStackTrace();
+
                 throw new ParserConfigurationException((new StringBuilder()).append("Unable to parse Pattern(").append(_currentPattern.getId()).append("). ").append(e.getMessage()).toString());
             }
         }
@@ -283,50 +287,34 @@ public final class PatternFactory {
         return result;
     }
 
-    private static String[] splitString(String value) {
+    private static String[] splitString(String str)
+    {
+        String[] result = new String[2];
+        result[0] = "";
+        result[1] = "";
 
-        // todo
-        String result[];
-        int index;
+        int i = 0;
+        StringBuilder sb = new StringBuilder();
 
-        return value.split(".");
+        for (i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if (Character.isDigit(c) || c == '.')
+                sb.append(c);
+            else break;
+        }
 
-//        result = (new String[] {
-//            "", ""
-//        });
-//        index = 0;
-//_L3:
-//        if(index >= value.length()) goto _L2; else goto _L1
-//_L1:
-//        char c;
-//        c = value.charAt(index);
-//        if(!Character.isDigit(c) && c != '.')
-//            break MISSING_BLOCK_LABEL_69;
-//        new StringBuilder();
-//        result;
-//        0;
-//        JVM INSTR dup2_x1 ;
-//        JVM INSTR aaload ;
-//        append();
-//        c;
-//        append();
-//        toString();
-//        JVM INSTR aastore ;
-//        continue; /* Loop/switch isn't completed */
-//        new StringBuilder();
-//        result;
-//        1;
-//        JVM INSTR dup2_x1 ;
-//        JVM INSTR aaload ;
-//        append();
-//        c;
-//        append();
-//        toString();
-//        JVM INSTR aastore ;
-//        index++;
-//          goto _L3
-//_L2:
-//        return result;
+        if (sb.toString().length() > 0) {
+            result[0] = sb.toString();
+            result[1] = str.substring(i);
+        }
+        else{
+            result[0] = "";
+            result[1] = str;
+        }
+
+        System.out.println("result 0 = " + result[0]);
+        System.out.println("result 1 = " + result[1]);
+        return result;
     }
 
     private static Class parseCompareType(String type, String compare)

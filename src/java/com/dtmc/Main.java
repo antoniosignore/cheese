@@ -27,7 +27,7 @@ import javax.xml.parsers.ParserConfigurationException;
 public class Main {
     private static final String IN_DATE_FORMAT = "yyyyMMdd";
     private static final String OUT_DATE_FORMAT = "yyyy/MM/dd";
-    private static String INPUT_FILE = "sample_history_data.txt";
+    private static String INPUT_FILE = "/home/antonio/sample_history_data.txt";
     private static String SIMPLE_OUT_FILE = "simple_out.txt";
     private static String SIMPLE_ALG_OUT_FILE = "simple_alg_out.txt";
     private static String PARAM_ALG_OUT_FILE = "param_alg_out.txt";
