@@ -5,20 +5,16 @@ import java.util.Iterator;
 import java.util.List;
 
 
-class ConstraintLinearPositive extends ConstraintLinear
-{
+class ConstraintLinearPositive extends ConstraintLinear {
 
-    public ConstraintLinearPositive(Scalar factor, Iterable scalars)
-    {
+    public ConstraintLinearPositive(Scalar factor, Iterable scalars) {
         super(factor, scalars);
     }
 
-    protected boolean process(List data, int index)
-    {
+    protected boolean process(List data, int index) {
         double left = 0.0D;
-        for(Iterator i$ = getScalars().iterator(); i$.hasNext();)
-        {
-            Scalar scalar = (Scalar)i$.next();
+        for (Iterator i$ = getScalars().iterator(); i$.hasNext(); ) {
+            Scalar scalar = (Scalar) i$.next();
             left += scalar.calculateValue(data, index);
         }
 

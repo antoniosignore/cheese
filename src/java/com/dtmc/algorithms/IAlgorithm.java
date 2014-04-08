@@ -1,9 +1,10 @@
 package com.dtmc.algorithms;
 
+import com.dtmc.Value;
+
 import java.util.List;
 
-public interface IAlgorithm
-{
+public interface IAlgorithm {
 
-    public abstract void execute(List list, int i);
+    public abstract void execute(List<Value> list, int i);
 }

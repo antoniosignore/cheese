@@ -9,80 +9,65 @@ import java.util.List;
 //            Constraint
 
 public final class Pattern
-    implements Comparable
-{
+        implements Comparable {
 
-    Pattern(int id)
-    {
+    Pattern(int id) {
         this.id = id;
     }
 
-    public int getId()
-    {
+    public int getId() {
         return id;
     }
 
-    public String getForecast()
-    {
+    public String getForecast() {
         return forecast;
     }
 
-    void setForecast(String forecast)
-    {
+    void setForecast(String forecast) {
         this.forecast = forecast;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    void setName(String name)
-    {
+    void setName(String name) {
         this.name = name;
     }
 
-    public int getCount()
-    {
+    public int getCount() {
         return count;
     }
 
-    void setCount(int count)
-    {
+    void setCount(int count) {
         this.count = count;
     }
 
-    Iterable getConstraints()
-    {
+    Iterable getConstraints() {
         return constraints;
     }
 
-    void setConstraints(Iterable constraints)
-    {
+    void setConstraints(Iterable constraints) {
         this.constraints = constraints;
     }
 
-    public boolean eval(List data, int index)
-    {
-        for(Iterator i$ = constraints.iterator(); i$.hasNext();)
-        {
-            Constraint constraint = (Constraint)i$.next();
+    public boolean eval(List data, int index) {
+        for (Iterator i$ = constraints.iterator(); i$.hasNext(); ) {
+            Constraint constraint = (Constraint) i$.next();
             boolean result = constraint.eval(data, index);
-            if(!result)
+            if (!result)
                 return false;
         }
 
         return true;
     }
 
-    public int compareTo(Pattern o)
-    {
+    public int compareTo(Pattern o) {
         return getId() - o.getId();
     }
 
-    public int compareTo(Object x0)
-    {
-        return compareTo((Pattern)x0);
+    public int compareTo(Object x0) {
+        return compareTo((Pattern) x0);
     }
 
     private final int id;

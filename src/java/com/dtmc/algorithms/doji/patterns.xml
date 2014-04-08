@@ -219,7 +219,7 @@
             </constraint>
         </candlesticks>
     </pattern>
-    
+
     <pattern id="1003" forecast="bearish">
         <Name>Bearish Evening Star #1</Name>
         <candlesticks num="3" unit="volatility">
@@ -630,7 +630,7 @@
                 </scalar>
             </constraint>
             <constraint type="linear" compare="negative" tolerance="0">
-                <comment> D2 Top Below D1 Top</comment>
+                <comment>D2 Top Below D1 Top</comment>
                 <scalar candle="1">
                     <top value="-1"/>
                 </scalar>
@@ -772,7 +772,7 @@
             </constraint>
         </candlesticks>
     </pattern>
-	
+
     <pattern id="1012" forecast="bullish">
         <Name>White Marubozu #1</Name>
         <candlesticks num="1" unit="volatility">
@@ -912,7 +912,7 @@
             </constraint>
         </candlesticks>
     </pattern>
-    
+
     <pattern id="1015" forecast="bearish">
         <Name>Bearish Shooting Star #1</Name>
         <candlesticks num="2" unit="volatility">
@@ -1041,7 +1041,7 @@
             </constraint>
         </candlesticks>
     </pattern>
-    
+
     <pattern id="1017" forecast="bearish">
         <Name>Bearish Dark Cloud Cover #1</Name>
         <candlesticks num="2" unit="volatility">
@@ -1101,7 +1101,7 @@
             </constraint>
         </candlesticks>
     </pattern>
-	
+
     <pattern id="1018" forecast="bearish">
         <Name>Bearish Harami #1</Name>
         <candlesticks num="2" unit="volatility">
@@ -1637,7 +1637,7 @@
             </constraint>
         </candlesticks>
     </pattern>
-    
+
     <pattern id="1025" forecast="bearish">
         <Name>Bearish Kicking #1</Name>
         <candlesticks num="2" unit="volatility">
@@ -2116,7 +2116,7 @@
             </constraint>
         </candlesticks>
     </pattern>
-    
+
     <pattern id="1032" forecast="bullish">
         <Name>Bullish Harami Cross #1</Name>
         <candlesticks num="2" unit="volatility">
@@ -2227,7 +2227,7 @@
             </constraint>
         </candlesticks>
     </pattern>
-    
+
     <pattern id="1034" forecast="bullish">
         <Name>Bullish Matching Low #1</Name>
         <candlesticks num="2" unit="volatility">
@@ -2286,7 +2286,7 @@
 
             <!-- 3. Then we see a long white candlestick on the second day.
             Its body is lower than the previous trend. -->
-            <constraint type="linear" compare="negative"  tolerance="0">
+            <constraint type="linear" compare="negative" tolerance="0">
                 <comment>Tall White Candle</comment>
                 <const value="0.5" factor="unit"/>
                 <scalar candle="2">
@@ -2296,7 +2296,7 @@
             </constraint>
 
             <!-- 4. The closing prices are same or almost same on both days. -->
-            <constraint type="linear" compare="absolute"  tolerance="0">
+            <constraint type="linear" compare="absolute" tolerance="0">
                 <comment>D1 Bottom Equal D2 Top</comment>
                 <const value="0.001" factor="unit"/>
                 <scalar candle="1">
@@ -2361,7 +2361,7 @@
                     <close value="1"/>
                 </scalar>
             </constraint>
-            <constraint type="linear" compare="absolute"  tolerance="0">
+            <constraint type="linear" compare="absolute" tolerance="0">
                 <comment>No Fuse Down 3</comment>
                 <const value="0.001" factor="unit"/>
                 <scalar candle="3">
@@ -2369,7 +2369,7 @@
                     <low value="-1"/>
                 </scalar>
             </constraint>
-            <constraint type="linear" compare="absolute"  tolerance="0.01">
+            <constraint type="linear" compare="absolute" tolerance="0.01">
                 <comment>D3 Bottom Equal D1 Bottom</comment>
                 <const value="0.001" factor="unit"/>
                 <scalar candle="1">
@@ -2584,7 +2584,7 @@
             </constraint>
 
             <!-- 3. Then we see a Hammer-like black candlestick on the second day. -->
-            <constraint type="linear" compare="negative"  tolerance="0">
+            <constraint type="linear" compare="negative" tolerance="0">
                 <comment>Black Candle 2</comment>
                 <const value="0.01" factor="unit"/>
                 <scalar candle="2">
@@ -2874,18 +2874,18 @@
             <!-- 2. The day gaps down, and the market opens at its
             low but then prices go up during the day and they close near
             to the day’s high. -->
-			<constraint type="linear" compare="negative" tolerance="0">
-				<comment>D2 Bottom Gap Down D1 Low</comment>
-				<const value="0.3" factor="unit"/>
-				<scalar candle="1">
-					<low value="-1"/>
-				</scalar>
-				<scalar candle="2">
-					<bottom value="1"/>
-				</scalar>
-			</constraint>
-			
-			<!-- 3. We see a white body that has no lower shadow that is a White Opening Marubozu. -->
+            <constraint type="linear" compare="negative" tolerance="0">
+                <comment>D2 Bottom Gap Down D1 Low</comment>
+                <const value="0.3" factor="unit"/>
+                <scalar candle="1">
+                    <low value="-1"/>
+                </scalar>
+                <scalar candle="2">
+                    <bottom value="1"/>
+                </scalar>
+            </constraint>
+
+            <!-- 3. We see a white body that has no lower shadow that is a White Opening Marubozu. -->
             <constraint type="linear" compare="negative" tolerance="0">
                 <comment>Long White Candle D1</comment>
                 <const value="0.5" factor="unit"/>
@@ -2912,7 +2912,7 @@
             </constraint>
         </candlesticks>
     </pattern>
-    
+
     <pattern id="1043" forecast="bullish">
         <Name>Bullish Side-by-Side White Lines #1</Name>
         <candlesticks num="3" unit="volatility">
@@ -3880,24 +3880,24 @@
                     <open value="1"/>
                 </scalar>
             </constraint>
-			
-			<!-- 5. The third day is typically a short white candlestick, a spinning top or a star that gaps above the second day. -->
-			<constraint type="linear" compare="negative" tolerance="0">
-				<comment>White Candle</comment>
-				<const value="0.05" factor="unit"/>
-				<scalar candle="3">
-					<open value="1"/>
-					<close value="-1"/>
-				</scalar>
-			</constraint>
-			<constraint type="linear" compare="absolute" tolerance="0">
-				<comment>Short Candle</comment>
-				<const value="-0.3" factor="unit"/>
-				<scalar candle="3">
-					<top value="-1"/>
-					<bottom value="1"/>
-				</scalar>
-			</constraint>
+
+            <!-- 5. The third day is typically a short white candlestick, a spinning top or a star that gaps above the second day. -->
+            <constraint type="linear" compare="negative" tolerance="0">
+                <comment>White Candle</comment>
+                <const value="0.05" factor="unit"/>
+                <scalar candle="3">
+                    <open value="1"/>
+                    <close value="-1"/>
+                </scalar>
+            </constraint>
+            <constraint type="linear" compare="absolute" tolerance="0">
+                <comment>Short Candle</comment>
+                <const value="-0.3" factor="unit"/>
+                <scalar candle="3">
+                    <top value="-1"/>
+                    <bottom value="1"/>
+                </scalar>
+            </constraint>
         </candlesticks>
     </pattern>
 
@@ -3974,7 +3974,7 @@
             </constraint>
 
             <!-- 3. Then we see a black candlestick on the second day characterized by a gap up. -->
-            <constraint type="linear" compare="negative"  tolerance="0">
+            <constraint type="linear" compare="negative" tolerance="0">
                 <comment>Black Candle</comment>
                 <const value="0.01" factor="unit"/>
                 <scalar candle="2">
@@ -3992,21 +3992,21 @@
                     <bottom value="-1"/>
                 </scalar>
             </constraint>
-			<constraint type="linear" compare="negative" tolerance="0">
-				<comment>D2 Low Above D1 High</comment>
-				<const value="0.01" factor="unit"/>
-				<scalar candle="1">
-					<high value="1"/>
-				</scalar>
-				<scalar candle="2">
-					<low value="-1"/>
-				</scalar>
-			</constraint>
+            <constraint type="linear" compare="negative" tolerance="0">
+                <comment>D2 Low Above D1 High</comment>
+                <const value="0.01" factor="unit"/>
+                <scalar candle="1">
+                    <high value="1"/>
+                </scalar>
+                <scalar candle="2">
+                    <low value="-1"/>
+                </scalar>
+            </constraint>
 
             <!-- 4. Finally we see a black candlestick whose opening price
             is inside the body of the second day and which closes inside
             the body of the first day. -->
-            <constraint type="linear" compare="negative"  tolerance="0">
+            <constraint type="linear" compare="negative" tolerance="0">
                 <comment>Black Candle</comment>
                 <const value="0.001" factor="unit"/>
                 <scalar candle="3">
@@ -4024,7 +4024,7 @@
                     <top value="1"/>
                 </scalar>
             </constraint>
-            <constraint type="linear" compare="negative"  tolerance="0">
+            <constraint type="linear" compare="negative" tolerance="0">
                 <comment>D3 Top Above D2 Bottom</comment>
                 <const value="0.001" factor="unit"/>
                 <scalar candle="2">
@@ -4034,7 +4034,7 @@
                     <top value="-1"/>
                 </scalar>
             </constraint>
-            <constraint type="linear" compare="negative"  tolerance="0">
+            <constraint type="linear" compare="negative" tolerance="0">
                 <comment>D3 Bottom Below D1 Top</comment>
                 <const value="0.001" factor="unit"/>
                 <scalar candle="1">
@@ -4044,7 +4044,7 @@
                     <bottom value="1"/>
                 </scalar>
             </constraint>
-            <constraint type="linear" compare="negative"  tolerance="0">
+            <constraint type="linear" compare="negative" tolerance="0">
                 <comment>D3 Bottom Above D1 Bottom</comment>
                 <const value="0.001" factor="unit"/>
                 <scalar candle="1">
@@ -4167,17 +4167,17 @@
 
             <!-- 2. The day gaps up and prices open on their high but
             then prices move down closing near its low for the day. -->
-			<constraint type="linear" compare="negative" tolerance="0">
-				<comment>D2 Top Gap Up D1 High</comment>
-				<const value="0.3" factor="unit"/>
-				<scalar candle="1">
-					<high value="1"/>
-				</scalar>
-				<scalar candle="2">
-					<top value="1"/>
-				</scalar>
-			</constraint>
-			
+            <constraint type="linear" compare="negative" tolerance="0">
+                <comment>D2 Top Gap Up D1 High</comment>
+                <const value="0.3" factor="unit"/>
+                <scalar candle="1">
+                    <high value="1"/>
+                </scalar>
+                <scalar candle="2">
+                    <top value="1"/>
+                </scalar>
+            </constraint>
+
             <!-- 3. We then see a black body characterized by the absence
             of upper shadow, which is called a Black Opening Marubozu. -->
             <constraint type="linear" compare="negative" tolerance="0">
@@ -4703,7 +4703,7 @@
                     <close value="1"/>
                 </scalar>
             </constraint>
-            <constraint type="linear" compare="negative"  tolerance="0">
+            <constraint type="linear" compare="negative" tolerance="0">
                 <comment>Tall Black Candle</comment>
                 <const value="0.5" factor="unit"/>
                 <scalar candle="2">
@@ -4711,7 +4711,7 @@
                     <close value="1"/>
                 </scalar>
             </constraint>
-            <constraint type="linear" compare="negative"  tolerance="0">
+            <constraint type="linear" compare="negative" tolerance="0">
                 <comment>Tall Black Candle</comment>
                 <const value="0.5" factor="unit"/>
                 <scalar candle="3">
@@ -4719,7 +4719,7 @@
                     <close value="1"/>
                 </scalar>
             </constraint>
-            <constraint type="linear" compare="negative"  tolerance="0">
+            <constraint type="linear" compare="negative" tolerance="0">
                 <comment>Open 2 Below Open 1</comment>
                 <scalar candle="2">
                     <open value="1"/>
@@ -4728,7 +4728,7 @@
                     <open value="-1"/>
                 </scalar>
             </constraint>
-            <constraint type="linear" compare="negative"  tolerance="0">
+            <constraint type="linear" compare="negative" tolerance="0">
                 <comment>Close 2 Below Close 1</comment>
                 <scalar candle="2">
                     <close value="1"/>
@@ -4737,7 +4737,7 @@
                     <close value="-1"/>
                 </scalar>
             </constraint>
-            <constraint type="linear" compare="negative"  tolerance="0">
+            <constraint type="linear" compare="negative" tolerance="0">
                 <comment>Open 3 Below Open 2</comment>
                 <scalar candle="3">
                     <open value="1"/>
@@ -4746,7 +4746,7 @@
                     <open value="-1"/>
                 </scalar>
             </constraint>
-            <constraint type="linear" compare="negative"  tolerance="0">
+            <constraint type="linear" compare="negative" tolerance="0">
                 <comment>Close 3 Below Close 2</comment>
                 <scalar candle="3">
                     <close value="1"/>
@@ -4755,14 +4755,14 @@
                     <close value="-1"/>
                 </scalar>
             </constraint>
-            <constraint type="linear" compare="negative"  tolerance="0">
+            <constraint type="linear" compare="negative" tolerance="0">
                 <comment>White Candle</comment>
                 <scalar candle="4">
                     <open value="1"/>
                     <close value="-1"/>
                 </scalar>
             </constraint>
-            <constraint type="linear" compare="negative"  tolerance="0">
+            <constraint type="linear" compare="negative" tolerance="0">
                 <comment>Open 4 Below Close 3</comment>
                 <scalar candle="4">
                     <open value="1"/>
@@ -4771,7 +4771,7 @@
                     <close value="-1"/>
                 </scalar>
             </constraint>
-            <constraint type="linear" compare="negative"  tolerance="0">
+            <constraint type="linear" compare="negative" tolerance="0">
                 <comment>Open 1 Below Close 4</comment>
                 <scalar candle="1">
                     <open value="1"/>
