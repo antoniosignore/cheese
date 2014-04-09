@@ -45,17 +45,16 @@ class BootStrap {
     private static void createData() {
 
         if (Pattern.getAll() == null || Pattern.getAll().size() == 0) {
-            /* Integer code
-    PatternTypeEnum patternType
-    RelevanceTypeEnum relevanceType
-    ReliabilityTypeEnum reliability
-    ConfirmationTypeEnum confirmation
-    Integer noSticks
-    String definition
-    String recognition
-             */
 
-            new Pattern(code: 1001, name: "BULLISH THREE WHITE SOLDIERS", patternType: PatternTypeEnum.Reversal, relevanceType: RelevanceTypeEnum.Bullish, reliability: ReliabilityTypeEnum.High, confirmation: ConfirmationTypeEnum.Suggested, noSticks: 3, definition: "Bullish Three White Soldiers Pattern is indicative of a strong reversal in the market. It is characterized by three long candlesticks stepping upward like a staircase. The opening of each day is slightly lower than previous close rallying then to a short term high.", recognition: "1. Market is characterized by downtrend.\n" +
+
+            new Pattern(code: 1001, name: "BULLISH THREE WHITE SOLDIERS",
+                    patternType: PatternTypeEnum.Reversal,
+                    relevanceType: RelevanceTypeEnum.Bullish,
+                    priorTrend:RelevanceTypeEnum.Bearish,
+                    reliability: ReliabilityTypeEnum.High,
+                    confirmation: ConfirmationTypeEnum.Suggested,
+                    noSticks: 3,
+                    definition: "Bullish Three White Soldiers Pattern is indicative of a strong reversal in the market. It is characterized by three long candlesticks stepping upward like a staircase. The opening of each day is slightly lower than previous close rallying then to a short term high.", recognition: "1. Market is characterized by downtrend.\n" +
                     "2. We see three consecutive long white candlesticks.\n" +
                     "3. Each candlestick closes at a new high. \n" +
                     "4. The opening of each candlestick is within the body of the previous day. \n" +
@@ -78,8 +77,9 @@ class BootStrap {
             new Pattern(code: 1003, name: "BEARISH EVENING STAR",
                     patternType: PatternTypeEnum.Reversal,
                     relevanceType: RelevanceTypeEnum.Bearish,
-                    priorTrend: RelevanceTypeEnum.Bearish.Bullish,
-                    reliability: ReliabilityTypeEnum.High, confirmation: ConfirmationTypeEnum.Suggested, noSticks: 3,
+                    priorTrend: RelevanceTypeEnum.Bullish,
+                    reliability: ReliabilityTypeEnum.High,
+                    confirmation: ConfirmationTypeEnum.Suggested, noSticks: 3,
                     definition: "This is a major top reversal pattern formed by three candlesticks. The first candlestick is a long white body; the second one is a small real body that may be white. It is characteristically marked with a gap in higher direction thus forming a star. In fact, the first two candlesticks form a basic star pattern. Finally we see the black candlestick with a closing price well within first session’s white real body. This pattern clearly shows that the market now turned bearish.",
                     recognition: "1. Market is characterized by uptrend.\n" +
                             "2. We see a long white candlestick in the first day.\n" +
@@ -89,7 +89,7 @@ class BootStrap {
 
             new Pattern(code: 1004, name: "BULLISH MORNING STAR",
                     patternType: PatternTypeEnum.ReversalContinuation,
-                    relevanceType: RelevanceTypeEnum.Bearish,
+                    relevanceType: RelevanceTypeEnum.Bullish,
                     priorTrend: RelevanceTypeEnum.Bearish,
                     reliability: ReliabilityTypeEnum.High,
                     confirmation: ConfirmationTypeEnum.Suggested,
@@ -887,93 +887,116 @@ class BootStrap {
                             "4. The body of third day candlestick closes into the gap but does not fully close the gap").save(flush: true, insert: true, failOnError: true)
 
             new Pattern(code: 1063, name: "BEARISH SIDE BY SIDE WHITE LINES",
-                    patternType: PatternTypeEnum.ReversalContinuation,
+                    patternType: PatternTypeEnum.Continuation,
                     relevanceType: RelevanceTypeEnum.Bearish,
                     priorTrend: RelevanceTypeEnum.Bearish,
-                    reliability: ReliabilityTypeEnum.High,
-                    confirmation: ConfirmationTypeEnum.Suggested,
-                    noSticks: 2,
-                    definition: "",
-                    recognition: "").save(flush: true, insert: true, failOnError: true)
+                    reliability: ReliabilityTypeEnum.Medium,
+                    confirmation: ConfirmationTypeEnum.Recommended,
+                    noSticks: 3,
+                    definition: "This pattern is formed by a black candlestick that is followed by two white candlesticks during a downtrend. Its particular feature is to display days that are gapped below the first day. This suggests that the shorts are covering their positions, and no reversal is expected soon. The downtrend is likely to remain intact for the near future",
+                    recognition: "1. Market is characterized by downtrend.\n" +
+                            "2. We see a black candlestick in the first day.\n" +
+                            "3. Then we see a white candlestick gapping down on second day.\n" +
+                            "4. Finally we see a white candlestick, which is almost the same size and is also marked with an opening price at about the same price as the opening price of the second day").save(flush: true, insert: true, failOnError: true)
 
 
-            new Pattern(code: 1064, name: "BEARISH SEPERATING LINES",
-                    patternType: PatternTypeEnum.ReversalContinuation,
+            new Pattern(code: 1064, name: "BEARISH SEPARATING LINES",
+                    patternType: PatternTypeEnum.Continuation,
                     relevanceType: RelevanceTypeEnum.Bearish,
                     priorTrend: RelevanceTypeEnum.Bearish,
-                    reliability: ReliabilityTypeEnum.High,
-                    confirmation: ConfirmationTypeEnum.Suggested,
+                    reliability: ReliabilityTypeEnum.Low,
+                    confirmation: ConfirmationTypeEnum.Required,
                     noSticks: 2,
-                    definition: "",
-                    recognition: "").save(flush: true, insert: true, failOnError: true)
+                    definition: "This pattern is characterized by a white candlestick in a downtrend, which is followed by a sharply lower gap when market opens next day and shows an opening price equal to the prior day’s opening price and also a lower closing price, which is a Black Opening Marubozu",
+                    recognition: "1. The market is characterized by downtrend.\n" +
+                            "2. We see a long white candlestick in the first day.\n" +
+                            "3. Then we see a black body, which has the same opening price as the first day, or extremely close to it.\n" +
+                            "4. The second day candlestick is a Black Opening Marubozu").save(flush: true, insert: true, failOnError: true)
 
             new Pattern(code: 1065, name: "BEARISH THRUSTING",
-                    patternType: PatternTypeEnum.ReversalContinuation,
+                    patternType: PatternTypeEnum.Continuation,
                     relevanceType: RelevanceTypeEnum.Bearish,
-                    reliability: ReliabilityTypeEnum.High,
-                    confirmation: ConfirmationTypeEnum.Suggested,
+                    reliability: ReliabilityTypeEnum.Low,
+                    confirmation: ConfirmationTypeEnum.Required,
                     noSticks: 2,
-                    definition: "",
-                    recognition: "").save(flush: true, insert: true, failOnError: true)
+                    definition: "Bearish Thrusting Pattern is characterized by a white candlestick that closes in the prior black real body, however still under the middle of the prior session’s real body. Bearish Thrusting Pattern is a bearish signal in a downtrend",
+                    recognition: "1. Market is characterized by downtrend.\n" +
+                            "2. We see a black candlestick in first day.\n" +
+                            "3. Then we see a white candlestick, which opens considerably lower than the low of the first day.\n" +
+                            "4. The second day candlestick closes well into the body of first black candlestick, but not above the midpoint").save(flush: true, insert: true, failOnError: true)
 
             new Pattern(code: 1066, name: "BEARISH THREE LINE STRIKE",
-                    patternType: PatternTypeEnum.ReversalContinuation,
+                    patternType: PatternTypeEnum.Continuation,
                     relevanceType: RelevanceTypeEnum.Bearish,
                     priorTrend: RelevanceTypeEnum.Bearish,
-                    reliability: ReliabilityTypeEnum.High,
-                    confirmation: ConfirmationTypeEnum.Suggested,
-                    noSticks: 2,
-                    definition: "",
-                    recognition: "").save(flush: true, insert: true, failOnError: true)
+                    reliability: ReliabilityTypeEnum.Low,
+                    confirmation: ConfirmationTypeEnum.DefinitelyRequired,
+                    noSticks: 4,
+                    definition: "This pattern is characterized by three adjacent black and long candlesticks terminated by a white candlestick driving prices back to the point where they were at the beginning of the pattern. If there was a strong bearish trend before the pattern, then it should continue",
+                    recognition: "1. Market is characterized by downtrend.\n" +
+                            "2. We see three long black candlesticks with consecutively lower closes.\n" +
+                            "3. Then we see a white candlestick on the fourth day opening at a lower level and closing above the open of the pattern’s first day").save(flush: true, insert: true, failOnError: true)
 
             new Pattern(code: 1067, name: "BEARISH DOJI STAR",
-                    patternType: PatternTypeEnum.ReversalContinuation,
+                    patternType: PatternTypeEnum.Reversal,
                     relevanceType: RelevanceTypeEnum.Bearish,
-                    priorTrend: RelevanceTypeEnum.Bearish,
-                    reliability: ReliabilityTypeEnum.High,
+                    priorTrend: RelevanceTypeEnum.Bullish,
+                    reliability: ReliabilityTypeEnum.Medium,
                     confirmation: ConfirmationTypeEnum.Suggested,
                     noSticks: 2,
-                    definition: "",
-                    recognition: "").save(flush: true, insert: true, failOnError: true)
+                    definition: "A short candlestick, a spinning top, a highwave or a doji following a white candlestick with an upside gap during an uptrend, is the Bearish (Doji) Star Pattern",
+                    recognition: "1. Market is characterized by uptrend.\n" +
+                            "2. We see a long white candlestick in the first day.\n" +
+                            "3. Then we see a short candlestick, a spinning top, a highwave or a doji that gaps in the direction of the previous trend on the second day.\n" +
+                            "4. The shadows of the short candlestick, spinning top, highwave or doji are not long").save(flush: true, insert: true, failOnError: true)
 
             new Pattern(code: 1068, name: "BULLISH DOJI STAR",
-                    patternType: PatternTypeEnum.ReversalContinuation,
-                    relevanceType: RelevanceTypeEnum.Bearish,
-                    reliability: ReliabilityTypeEnum.High,
+                    patternType: PatternTypeEnum.Reversal,
+                    relevanceType: RelevanceTypeEnum.Bullish,
+                    priorTrend: RelevanceTypeEnum.Bearish,
+                    reliability: ReliabilityTypeEnum.Medium,
                     confirmation: ConfirmationTypeEnum.Suggested,
                     noSticks: 2,
-                    definition: "",
-                    recognition: "").save(flush: true, insert: true, failOnError: true)
+                    definition: "Bullish (Doji) Star Pattern is a short candlestick, a spinning top, a highwave or a doji, which gaps from a long black candlestick during a downtrend",
+                    recognition: "1. Market is characterized by downtrend.\n" +
+                            "2. We see a long black candlestick on the first day.\n" +
+                            "3. Then we see a short candlestick, a spinning top, a highwave or a doji, that gaps in the direction of the previous trend on second day.\n" +
+                            "4. The shadows of this short candlestick, spinning top, highwave or doji are not long").save(flush: true, insert: true, failOnError: true)
 
             new Pattern(code: 1069, name: "BEARISH TWEEZER TOP",
-                    patternType: PatternTypeEnum.ReversalContinuation,
+                    patternType: PatternTypeEnum.Reversal,
                     relevanceType: RelevanceTypeEnum.Bearish,
-                    priorTrend: RelevanceTypeEnum.Bearish,
-                    reliability: ReliabilityTypeEnum.High,
+                    priorTrend: RelevanceTypeEnum.Bullish,
+                    reliability: ReliabilityTypeEnum.Medium,
                     confirmation: ConfirmationTypeEnum.Suggested,
                     noSticks: 2,
-                    definition: "",
-                    recognition: "").save(flush: true, insert: true, failOnError: true)
+                    definition: "The price action has trended upward then 2 consecutive days of equal highs",
+                    recognition: "1st day consists of a long body candle.\n" +
+                            "2nd day consists of a short body candle or a doji that has a high equal to the prior day's high.\n" +
+                            "The color of each candle body is not considered in the matching of this pattern.").save(flush: true, insert: true, failOnError: true)
 
             new Pattern(code: 1070, name: "BULLISH TWEEZER BOTTOM",
-                    patternType: PatternTypeEnum.ReversalContinuation,
-                    relevanceType: RelevanceTypeEnum.Bearish,
+                    patternType: PatternTypeEnum.Reversal,
+                    relevanceType: RelevanceTypeEnum.Bullish,
                     priorTrend: RelevanceTypeEnum.Bearish,
-                    reliability: ReliabilityTypeEnum.High,
+                    reliability: ReliabilityTypeEnum.Medium,
                     confirmation: ConfirmationTypeEnum.Suggested,
                     noSticks: 2,
-                    definition: "",
-                    recognition: "").save(flush: true, insert: true, failOnError: true)
+                    definition: "The price action has trended downward then 2 consecutive days of equal lows",
+                    recognition: "1st day consists of a long body candle.\n" +
+                            "2nd day consists of a short body candle or a doji that has a low equal to the prior day's low.\n" +
+                            "The color of each candle body is not considered in the matching of this pattern.").save(flush: true, insert: true, failOnError: true)
 
             new Pattern(code: 1071, name: "BEARISH IDENTICAL THREE CROWS",
-                    patternType: PatternTypeEnum.ReversalContinuation,
+                    patternType: PatternTypeEnum.Reversal,
                     relevanceType: RelevanceTypeEnum.Bearish,
-                    priorTrend: RelevanceTypeEnum.Bearish,
-                    reliability: ReliabilityTypeEnum.High,
+                    priorTrend: RelevanceTypeEnum.Bullish,
+                    reliability: ReliabilityTypeEnum.Medium,
                     confirmation: ConfirmationTypeEnum.Suggested,
-                    noSticks: 2,
-                    definition: "",
-                    recognition: "").save(flush: true, insert: true, failOnError: true)
+                    noSticks: 3,
+                    definition: "Same as three black crows pattern, where each day opens at the previous day's close",
+                    recognition: "Three consecutive long black days with lower closes each day.\n" +
+                            "Each day opens at the previous day's close").save(flush: true, insert: true, failOnError: true)
 
         }
 
