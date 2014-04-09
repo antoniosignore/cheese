@@ -2,7 +2,8 @@ package com.netnumeri.server.enums
 
 public enum PatternTypeEnum {
 
-    ReversalContinuation("Reversal/Continuation")
+    ReversalContinuation("Reversal/Continuation"),
+    Reversal("Reversal")
 
     final String value
 
