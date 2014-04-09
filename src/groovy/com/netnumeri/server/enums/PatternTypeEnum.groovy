@@ -2,6 +2,7 @@ package com.netnumeri.server.enums
 
 public enum PatternTypeEnum {
 
+    Continuation("Continuation"),
     ReversalContinuation("Reversal/Continuation"),
     Reversal("Reversal")
 

@@ -2,7 +2,12 @@ package com.netnumeri.server.enums
 
 public enum ConfirmationTypeEnum {
 
-    Suggested ("Suggested"), Required
+    Needed ("Needed"),
+    Suggested ("Suggested"),
+    Required ("Required"),
+    DefinitelyRequired("Definitely Required"),
+    StronglySuggested("Strongly Suggested"),
+    Recommended("Recommended")
 
     final String value
 
