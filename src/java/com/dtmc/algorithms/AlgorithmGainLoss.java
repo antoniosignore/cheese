@@ -1,12 +1,14 @@
-
 package com.dtmc.algorithms;
 
 import com.dtmc.Value;
 
 import java.util.List;
 
-public final class AlgorithmGainLoss
-        implements IAlgorithm {
+public final class AlgorithmGainLoss implements IAlgorithm {
+
+    private final String _source;
+    private final String _gain;
+    private final String _loss;
 
     public AlgorithmGainLoss(String source, String gain, String loss) {
         _source = source;
@@ -20,21 +22,19 @@ public final class AlgorithmGainLoss
             previousIndex = 0;
         Value previous = (Value) data.get(previousIndex);
         Value current = (Value) data.get(index);
-        double change = ((Double) current.get(_source)).doubleValue() - ((Double) previous.get(_source)).doubleValue();
+        double change = (Double) current.get(_source) - (Double) previous.get(_source);
         int compare = Double.compare(change, 0.0D);
         if (compare > 0) {
-            current.set(_gain, Double.valueOf(Math.abs(change)));
-            current.set(_loss, Double.valueOf(0.0D));
+            current.set(_gain, Math.abs(change));
+            current.set(_loss, 0.0D);
         } else if (compare < 0) {
-            current.set(_gain, Double.valueOf(0.0D));
-            current.set(_loss, Double.valueOf(Math.abs(change)));
+            current.set(_gain, 0.0D);
+            current.set(_loss, Math.abs(change));
         } else {
-            current.set(_gain, Double.valueOf(0.0D));
-            current.set(_loss, Double.valueOf(0.0D));
+            current.set(_gain, 0.0D);
+            current.set(_loss, 0.0D);
         }
     }
 
-    private final String _source;
-    private final String _gain;
-    private final String _loss;
+
 }

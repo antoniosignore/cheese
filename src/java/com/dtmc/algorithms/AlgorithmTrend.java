@@ -31,12 +31,12 @@ public final class AlgorithmTrend
     public void execute(List data, int index) {
         Value current = (Value) data.get(index);
         if (index < _depth - 1) {
-            current.set(_target, Double.valueOf(0.0D));
+            current.set(_target, 0.0D);
         } else {
             double y[] = new double[_depth];
             int counter = 0;
             for (int i = (1 + index) - _depth; i <= index; i++)
-                y[counter++] = ((Double) ((Value) data.get(i)).get(_source)).doubleValue();
+                y[counter++] = (Double) ((Value) data.get(i)).get(_source);
 
             double avgY = average(y);
             for (int i = 0; i < _depth; i++)
@@ -51,7 +51,7 @@ public final class AlgorithmTrend
 
             double m = mUp / mDown;
             double b = avgY - m * _avgX;
-            current.set(_target, Double.valueOf(m));
+            current.set(_target, m);
         }
     }
 

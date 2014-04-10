@@ -20,10 +20,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.parsers.ParserConfigurationException;
 
-/**
- *
- * @author Denis
- */
 public class Main {
     private static final String IN_DATE_FORMAT = "yyyyMMdd";
     private static final String OUT_DATE_FORMAT = "yyyy/MM/dd";
@@ -42,16 +38,7 @@ public class Main {
             doji.processHistory(history);
             // Show results
             saveHistory(history, SIMPLE_OUT_FILE);
-        } catch (ParserConfigurationException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-            ex.printStackTrace();
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-            ex.printStackTrace();
-        } catch (IOException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-            ex.printStackTrace();
-        } catch (ParseException ex) {
+        } catch (Throwable ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             ex.printStackTrace();
         }

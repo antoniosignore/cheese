@@ -22,13 +22,13 @@ public final class AlgorithmRSI
     public void execute(List data, int index) {
         Value current = (Value) data.get(index);
         if (index < _depth) {
-            current.set(_rsi, Double.valueOf(0.0D));
+            current.set(_rsi, 0.0D);
         } else {
-            double gain = ((Double) current.get(_gain)).doubleValue();
-            double loss = ((Double) current.get(_loss)).doubleValue();
+            double gain = (Double) current.get(_gain);
+            double loss = (Double) current.get(_loss);
             double rs = gain / loss;
             double rsi = Double.compare(loss, 0.0D) != 0 ? 100D - 100D / (1.0D + rs) : 100D;
-            current.set(_rsi, Double.valueOf(rsi));
+            current.set(_rsi, rsi);
         }
     }
 

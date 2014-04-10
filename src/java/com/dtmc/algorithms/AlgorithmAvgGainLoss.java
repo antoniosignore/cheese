@@ -4,8 +4,13 @@ import com.dtmc.Value;
 
 import java.util.List;
 
-public final class AlgorithmAvgGainLoss
-        implements IAlgorithm {
+public final class AlgorithmAvgGainLoss implements IAlgorithm {
+
+    private final String _gain;
+    private final String _loss;
+    private final String _avgGain;
+    private final String _avgLoss;
+    private final int _depth;
 
     public AlgorithmAvgGainLoss(String gain, String loss, String avgGain, String avgLoss, int depth) {
         _gain = gain;
@@ -39,13 +44,9 @@ public final class AlgorithmAvgGainLoss
     }
 
     private void set(Value current, double gain, double loss) {
-        current.set(_avgGain, Double.valueOf(gain));
-        current.set(_avgLoss, Double.valueOf(loss));
+        current.set(_avgGain, gain);
+        current.set(_avgLoss, loss);
     }
 
-    private final String _gain;
-    private final String _loss;
-    private final String _avgGain;
-    private final String _avgLoss;
-    private final int _depth;
+
 }

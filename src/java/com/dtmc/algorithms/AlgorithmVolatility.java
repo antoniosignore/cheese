@@ -25,8 +25,8 @@ public final class AlgorithmVolatility
         Value targetValue = (Value) data.get(index);
         double sumSquared = 0.0D;
         for (int i = startIndex; i <= index; i++) {
-            double close = ((Double) ((Value) data.get(i)).get(_close)).doubleValue();
-            double mean = ((Double) targetValue.get(_average)).doubleValue();
+            double close = (Double) ((Value) data.get(i)).get(_close);
+            double mean = (Double) targetValue.get(_average);
             double deviation = close - mean;
             double squared = Math.pow(deviation, 2D);
             sumSquared += squared;
@@ -35,7 +35,7 @@ public final class AlgorithmVolatility
         int count = (index - startIndex) + 1;
         double avgSquared = sumSquared / (double) count;
         double sqrt = Math.sqrt(avgSquared);
-        targetValue.set(_target, Double.valueOf(sqrt));
+        targetValue.set(_target, sqrt);
     }
 
     private final String _close;
