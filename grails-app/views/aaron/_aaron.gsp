@@ -32,15 +32,17 @@
                         },
                         {
                             lineWidth: 1, showMarker: false,
+                            color: 'navy',
                             showLine: true
                         },
                         {
                             lineWidth: 1, showMarker: false,
+                            color: 'navy',
                             showLine: true
                         },
                         {
                             lineWidth: 1,
-                            color: 'blue',
+                            color: 'yellow',
                             showMarker: false,
                             showLine: true
                         }
