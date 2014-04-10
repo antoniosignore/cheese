@@ -959,8 +959,7 @@ class BootStrap {
                     recognition: "1. Market is characterized by downtrend.\n" +
                             "2. We see a black candlestick in the first day.\n" +
                             "3. Then we see a white candlestick gapping down on second day.\n" +
-                            "4. Finally we see a white candlestick, which is almost the same size and is also marked with an opening price at about the same price as the opening price of the second day")
-                    .save(flush: true, insert: true, failOnError: true)
+                            "4. Finally we see a white candlestick, which is almost the same size and is also marked with an opening price at about the same price as the opening price of the second day").save(flush: true, insert: true, failOnError: true)
 
 
             new Pattern(code: 1064, name: "BEARISH SEPARATING LINES",
