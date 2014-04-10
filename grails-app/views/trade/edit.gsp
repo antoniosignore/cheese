@@ -19,21 +19,21 @@
         </div>
     </g:hasErrors>
 
-    <g:form method="post" class="form-horizontal">
-        <g:hiddenField name="id" value="${tradeInstance?.id}"/>
-        <g:hiddenField name="version" value="${tradeInstance?.version}"/>
-        <fieldset class="form">
-            <g:render template="form"/>
-        </fieldset>
+    <g:form method="post" class="form-horizontal" >
+    <g:hiddenField name="id" value="${tradeInstance?.id}"/>
+    <g:hiddenField name="version" value="${tradeInstance?.version}"/>
+    <fieldset class="form">
+        <g:render template="form"/>
+    </fieldset>
 
-        <div class="form-actions">
-            <g:actionSubmit class="btn btn-primary" action="update"
-                            value="${message(code: 'default.button.update.label', default: 'Update')}"/>
-            <g:actionSubmit class="btn btn-danger" action="delete"
-                            value="${message(code: 'default.button.delete.label', default: 'Delete')}"
-                            onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');"/>
-            <button class="btn" type="reset"><g:message code="default.button.reset.label" default="Reset"/></button>
-        </div>
+    <div class="form-actions">
+        <g:actionSubmit class="btn btn-primary" action="update"
+                        value="${message(code: 'default.button.update.label', default: 'Update')}"/>
+        <g:actionSubmit class="btn btn-danger" action="delete"
+                        value="${message(code: 'default.button.delete.label', default: 'Delete')}"
+                        onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');"/>
+        <button class="btn" type="reset"><g:message code="default.button.reset.label" default="Reset"/></button>
+    </div>
     </g:form>
 
 </section>
