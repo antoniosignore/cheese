@@ -1,4 +1,4 @@
-<%@ page import="com.netnumeri.server.finance.finpojo.Trade" %>
+<%@ page import="com.netnumeri.server.finance.beans.TradeEnum; com.netnumeri.server.finance.finpojo.Trade" %>
 
 
 
@@ -41,7 +41,8 @@
             default="Instrument"/></label>
 
     <div class="controls">
-        <g:select id="instrument" name="instrument.id" from="${com.netnumeri.server.finance.finpojo.Instrument.list()}" optionKey="id" value="${tradeInstance?.instrument?.id}" class="many-to-one" noSelection="['null': '']"/>
+        <g:select id="instrument" name="instrument.id" from="${com.netnumeri.server.finance.finpojo.Instrument.list()}"
+                  optionKey="id" optionValue="name" value="${tradeInstance?.instrument?.id}" class="many-to-one" noSelection="['null': '']"/>
         <span class="help-inline">${hasErrors(bean: tradeInstance, field: 'instrument', 'error')}</span>
     </div>
 </div>
@@ -52,7 +53,8 @@
             default="Portfolio"/></label>
 
     <div class="controls">
-        <g:select id="portfolio" name="portfolio.id" from="${com.netnumeri.server.finance.finpojo.Portfolio.list()}" optionKey="id" value="${tradeInstance?.portfolio?.id}" class="many-to-one" noSelection="['null': '']"/>
+        <g:select id="portfolio" name="portfolio.id" from="${com.netnumeri.server.finance.finpojo.Portfolio.list()}"
+                  optionKey="id" optionValue="name" value="${tradeInstance?.portfolio?.id}" class="many-to-one" noSelection="['null': '']"/>
         <span class="help-inline">${hasErrors(bean: tradeInstance, field: 'portfolio', 'error')}</span>
     </div>
 </div>
@@ -74,7 +76,8 @@
             default="Trade Action"/></label>
 
     <div class="controls">
-        <g:select name="tradeAction" from="${com.netnumeri.server.finance.beans.TradeEnum?.values()}" keys="${com.netnumeri.server.finance.beans.TradeEnum.values()*.name()}" value="${tradeInstance?.tradeAction?.name()}" noSelection="['': '']"/>
+        <g:select name="tradeAction" from="${TradeEnum?.values()}" keys="${TradeEnum.values()*.name()}"
+                  value="${tradeInstance?.tradeAction?.name()}" noSelection="['': '']"/>
         <span class="help-inline">${hasErrors(bean: tradeInstance, field: 'tradeAction', 'error')}</span>
     </div>
 </div>
