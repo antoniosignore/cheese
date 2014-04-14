@@ -75,4 +75,14 @@ public final class Pattern
     private String name;
     private int count;
     private Iterable constraints;
+
+    @Override
+    public String toString() {
+        return "Pattern{" +
+                "id=" + id +
+                ", forecast='" + forecast + '\'' +
+                ", name='" + name + '\'' +
+                ", count=" + count +
+                '}';
+    }
 }

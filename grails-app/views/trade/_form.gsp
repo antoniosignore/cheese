@@ -1,5 +1,4 @@
-<%@ page import="com.netnumeri.server.finance.beans.TradeEnum; com.netnumeri.server.finance.finpojo.Trade" %>
-
+<%@ page import="com.netnumeri.server.finance.finpojo.Portfolio; com.netnumeri.server.finance.finpojo.Instrument; com.netnumeri.server.finance.beans.TradeEnum; com.netnumeri.server.finance.finpojo.Trade" %>
 
 
 <div class="control-group fieldcontain ${hasErrors(bean: tradeInstance, field: 'amount', 'error')} ">
@@ -41,7 +40,7 @@
             default="Instrument"/></label>
 
     <div class="controls">
-        <g:select id="instrument" name="instrument.id" from="${com.netnumeri.server.finance.finpojo.Instrument.list()}"
+        <g:select id="instrument" name="instrument.id" from="${Instrument.list()}"
                   optionKey="id" optionValue="name" value="${tradeInstance?.instrument?.id}" class="many-to-one" noSelection="['null': '']"/>
         <span class="help-inline">${hasErrors(bean: tradeInstance, field: 'instrument', 'error')}</span>
     </div>
@@ -53,7 +52,7 @@
             default="Portfolio"/></label>
 
     <div class="controls">
-        <g:select id="portfolio" name="portfolio.id" from="${com.netnumeri.server.finance.finpojo.Portfolio.list()}"
+        <g:select id="portfolio" name="portfolio.id" from="${Portfolio.list()}"
                   optionKey="id" optionValue="name" value="${tradeInstance?.portfolio?.id}" class="many-to-one" noSelection="['null': '']"/>
         <span class="help-inline">${hasErrors(bean: tradeInstance, field: 'portfolio', 'error')}</span>
     </div>

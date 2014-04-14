@@ -148,8 +148,10 @@ public class Main {
             builder.append("L: ").append((Double) value.get("OPEN")).append(", ");
             builder.append("C: ").append((Double) value.get("OPEN")).append(", ");
             builder.append("P: ");
-            for (final Pattern pattern : (Iterable<Pattern>) value.get("PATTERNS"))
+            for (final Pattern pattern : (Iterable<Pattern>) value.get("PATTERNS")) {
+                //Date: 2009/03/10, O: 1288.95, H: 1288.95, L: 1288.95, C: 1288.95, P: 1012;, OHLC: 5294.46
                 builder.append(pattern.getId()).append(';');
+            }
             builder.append(", OHLC: ");
             final Double ohlc = (Double) value.get("OHLC");
             if (ohlc == null)
