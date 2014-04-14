@@ -1,12 +1,10 @@
-
 package com.dtmc.algorithms;
 
 import com.dtmc.Value;
 
 import java.util.List;
 
-public final class AlgorithmVolatility
-        implements IAlgorithm {
+public final class AlgorithmVolatility implements IAlgorithm {
 
     public AlgorithmVolatility(String close, String average, String target, int depth, boolean create) {
         _close = close;

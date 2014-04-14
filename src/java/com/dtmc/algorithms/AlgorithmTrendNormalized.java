@@ -1,13 +1,10 @@
-
 package com.dtmc.algorithms;
 
 import com.dtmc.Value;
 
 import java.util.List;
 
-
-public final class AlgorithmTrendNormalized
-        implements IAlgorithm {
+public final class AlgorithmTrendNormalized implements IAlgorithm {
 
     public AlgorithmTrendNormalized(String source, String target, int depth) {
         _source = source;

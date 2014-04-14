@@ -31,7 +31,6 @@ public final class AlgorithmDoji implements IAlgorithm {
                     break;
                 Pattern pattern = (Pattern) i$.next();
                 if (pattern.eval(data, index)) {
-                    System.out.println("======> pattern = " + pattern.toString());
                     result.add(pattern);
                 }
             } while (true);

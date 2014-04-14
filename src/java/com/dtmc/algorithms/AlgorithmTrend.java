@@ -5,8 +5,7 @@ import com.dtmc.Value;
 
 import java.util.List;
 
-public final class AlgorithmTrend
-        implements IAlgorithm {
+public final class AlgorithmTrend implements IAlgorithm {
 
     private final String _source;
     private final String _target;

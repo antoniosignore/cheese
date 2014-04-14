@@ -5,8 +5,7 @@ import com.dtmc.Value;
 
 import java.util.List;
 
-public final class AlgorithmRSI
-        implements IAlgorithm {
+public final class AlgorithmRSI implements IAlgorithm {
     private final String _gain;
     private final String _loss;
     private final String _rsi;

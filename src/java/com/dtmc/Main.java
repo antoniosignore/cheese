@@ -143,13 +143,17 @@ public class Main {
         for (final Value value : history) {
             final StringBuilder builder = new StringBuilder();
             builder.append("Date: ").append(format.format(value.date())).append(", ");
-            builder.append("O: ").append((Double) value.get("OPEN")).append(", ");
-            builder.append("H: ").append((Double) value.get("OPEN")).append(", ");
-            builder.append("L: ").append((Double) value.get("OPEN")).append(", ");
-            builder.append("C: ").append((Double) value.get("OPEN")).append(", ");
+
+            System.out.println("format.format(value.date())  = " + format.format(value.date()));
+
+            builder.append("O: ").append(value.get("OPEN")).append(", ");
+            builder.append("H: ").append(value.get("OPEN")).append(", ");
+            builder.append("L: ").append(value.get("OPEN")).append(", ");
+            builder.append("C: ").append(value.get("OPEN")).append(", ");
             builder.append("P: ");
             for (final Pattern pattern : (Iterable<Pattern>) value.get("PATTERNS")) {
                 //Date: 2009/03/10, O: 1288.95, H: 1288.95, L: 1288.95, C: 1288.95, P: 1012;, OHLC: 5294.46
+                System.out.println(" ----------> pattern.getId() = " + pattern.getId() + " - " + pattern.getName());
                 builder.append(pattern.getId()).append(';');
             }
             builder.append(", OHLC: ");
