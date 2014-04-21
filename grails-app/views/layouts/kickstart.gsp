@@ -15,7 +15,9 @@
           type="image/x-icon"/>
 
     <%-- Manual switch for the skin can be found in /view/_menu/_config.gsp --%>
-    <r:require modules="jquery"/>
+    %{--<r:require modules="jquery"/>--}%
+    <r:external uri="/js/jquery-1.10.2.js"/>
+
     <r:require modules="bootstrap"/>
     <r:require modules="bootstrap_utils"/>
     <r:require modules="raphael"/>
@@ -58,7 +60,17 @@
     <r:external uri="/js/plugins/jqplot.dateAxisRenderer.min.js"/>
     <r:external uri="/js/plugins/jqplot.ohlcRenderer.min.js"/>
     <r:external uri="/js/plugins/jqplot.highlighter.min.js"/>
+    <r:external uri="/js/jquery-ui-1.10.4.min.js"/>
+    <r:external uri="/css/ui-lightness/jquery-ui-1.10.4.css"/>
 
+    <g:javascript>
+			$(document).ready(function() {
+			   $('#city').autocomplete({
+				 source: '<g:createLink controller='home' action='ajaxStockFinder'/>'
+			   });
+
+			});
+    </g:javascript>
 
 </head>
 
@@ -73,6 +85,11 @@
 <g:else>
     <g:render template="/layouts/header"/>
 </g:else>
+
+<div class="ui-widget">
+    <label for="city">Stock: </label>
+    <input id="city">
+</div>
 
 <div class="container">
     <div class="row-fluid">

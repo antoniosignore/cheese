@@ -7,7 +7,7 @@
 
 <body>
 
-PIPPO
+
 <sec:ifNotLoggedIn>
 
     <section id="login" class="first">
@@ -70,6 +70,10 @@ PIPPO
     </script>
 
 </sec:ifNotLoggedIn>
+
+
+
+
 
 </body>
 </html>
