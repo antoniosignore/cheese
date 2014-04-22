@@ -18,7 +18,7 @@
             <div class="span6">
                 <h3><g:message code="springSecurity.login.header"/></h3>
 
-                <form id='loginForm' class='form-horizontal' action='${postUrl}' method='POST' autocomplete='off'>
+                <form id='loginForm' class='form-horizontal' action='/dtmc/j_spring_security_check' method='POST' autocomplete='off'>
                     <fieldset class="form">
                         <div class="control-group fieldcontain ${hasErrors(bean: _DemoPageInstance, field: 'name', 'error')} ">
                             <label for='username' class="control-label"><g:message

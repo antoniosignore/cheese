@@ -12,7 +12,7 @@
 
             <ul class="dropdown-menu" role="menu">
                 <li class="form-container">
-                    <form action="${postUrl}" method="post" accept-charset="UTF-8">
+                    <form action="/dtmc/j_spring_security_check" method="post" accept-charset="UTF-8">
                         <input style="margin-bottom: 15px;" type="text" placeholder="Username" id="username"
                                name="j_username">
                         <input style="margin-bottom: 15px;" type="password" placeholder="Password" id="password"

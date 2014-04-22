@@ -15,30 +15,30 @@ public final class Engine {
     private static final int LENGTH_RSI = 14;
     private static final int LENGTH_TREND = 14;
     private static final int LENGTH_AVG_VOLATILITY = 365;
-    private final Collection<IAlgorithm> _algorithms;
-    private final Iterable _patterns;
+    private final Collection<IAlgorithm> algorithms;
+    private final Iterable patterns;
 
     public Engine() throws ParserConfigurationException {
-        _patterns = createPatterns(null, null);
-        _algorithms = new ArrayList<IAlgorithm>();
+        patterns = createPatterns(null, null);
+        algorithms = new ArrayList<IAlgorithm>();
         addBaseAlgorithms();
     }
 
     public Engine(InputStream stream) throws ParserConfigurationException {
-        _patterns = createPatterns(stream, null);
-        _algorithms = new ArrayList<IAlgorithm>();
+        patterns = createPatterns(stream, null);
+        algorithms = new ArrayList<IAlgorithm>();
         addBaseAlgorithms();
     }
 
     public Engine(Map<String, String> options) throws ParserConfigurationException {
-        _patterns = createPatterns(null, options);
-        _algorithms = new ArrayList<IAlgorithm>();
+        patterns = createPatterns(null, options);
+        algorithms = new ArrayList<IAlgorithm>();
         addBaseAlgorithms();
     }
 
     public Engine(InputStream stream, Map<String, String> options) throws ParserConfigurationException {
-        _patterns = createPatterns(stream, options);
-        _algorithms = new ArrayList<IAlgorithm>();
+        patterns = createPatterns(stream, options);
+        algorithms = new ArrayList<IAlgorithm>();
         addBaseAlgorithms();
     }
 
@@ -46,7 +46,7 @@ public final class Engine {
         if (algorithm == null) {
             throw new IllegalArgumentException("algorithm must be not null");
         } else {
-            _algorithms.add(algorithm);
+            algorithms.add(algorithm);
             return;
         }
     }
@@ -55,7 +55,7 @@ public final class Engine {
         int size = history.size();
         for (int index = 0; index < size; index++) {
             IAlgorithm algorithm;
-            for (Iterator<IAlgorithm> i$ = _algorithms.iterator(); i$.hasNext(); algorithm.execute(history, index))
+            for (Iterator<IAlgorithm> i$ = algorithms.iterator(); i$.hasNext(); algorithm.execute(history, index))
                 algorithm = i$.next();
         }
     }
@@ -74,15 +74,15 @@ public final class Engine {
     }
 
     private void addBaseAlgorithms() {
-        _algorithms.add(new AlgorithmHelper());
-        _algorithms.add(new AlgorithmAverage("CLOSE", "SMA", 20));
-        _algorithms.add(new AlgorithmVolatility("CLOSE", "SMA", "VOLATILITY", 20, false));
-        _algorithms.add(new AlgorithmAverage("VOLATILITY", "VOLATILITY_AVG", 365));
-        _algorithms.add(new AlgorithmGainLoss("CLOSE", "GAIN", "LOSS"));
-        _algorithms.add(new AlgorithmAvgGainLoss("GAIN", "LOSS", "GAIN_AVG", "LOSS_AVG", 14));
-        _algorithms.add(new AlgorithmRSI("GAIN_AVG", "LOSS_AVG", "RSI", 14));
-        _algorithms.add(new AlgorithmTrendNormalized("CLOSE", "TREND", 14));
-        _algorithms.add(new AlgorithmDoji(_patterns, "PATTERNS", 40));
+        algorithms.add(new AlgorithmHelper());
+        algorithms.add(new AlgorithmAverage("CLOSE", "SMA", 20));
+        algorithms.add(new AlgorithmVolatility("CLOSE", "SMA", "VOLATILITY", 20, false));
+        algorithms.add(new AlgorithmAverage("VOLATILITY", "VOLATILITY_AVG", 365));
+        algorithms.add(new AlgorithmGainLoss("CLOSE", "GAIN", "LOSS"));
+        algorithms.add(new AlgorithmAvgGainLoss("GAIN", "LOSS", "GAIN_AVG", "LOSS_AVG", 14));
+        algorithms.add(new AlgorithmRSI("GAIN_AVG", "LOSS_AVG", "RSI", 14));
+        algorithms.add(new AlgorithmTrendNormalized("CLOSE", "TREND", 14));
+        algorithms.add(new AlgorithmDoji(patterns, "PATTERNS", 40));
     }
 
 

@@ -11,21 +11,21 @@ import java.util.List;
 
 public final class AlgorithmDoji implements IAlgorithm {
 
-    private Iterable _patterns;
-    private final String _target;
-    private final int _startPosition;
+    private Iterable patterns;
+    private final String target;
+    private final int startPosition;
 
     public AlgorithmDoji(Iterable patterns, String target, int startPosition) {
-        _patterns = patterns;
-        _target = target;
-        _startPosition = startPosition;
+        this.patterns = patterns;
+        this.target = target;
+        this.startPosition = startPosition;
     }
 
     public void execute(List data, int index) {
         Value current = (Value) data.get(index);
         Collection result = new ArrayList();
-        if (index >= _startPosition) {
-            Iterator i$ = _patterns.iterator();
+        if (index >= startPosition) {
+            Iterator i$ = patterns.iterator();
             do {
                 if (!i$.hasNext())
                     break;
@@ -35,7 +35,7 @@ public final class AlgorithmDoji implements IAlgorithm {
                 }
             } while (true);
         }
-        current.set(_target, result);
+        current.set(target, result);
     }
 
 
