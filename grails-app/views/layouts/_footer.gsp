@@ -3,6 +3,6 @@
         Connected as:  ${username} -
         Don't touch my cheese! version: <g:meta name="app.version"/> -
         Build on Grails: <g:meta name="app.grails.version"/>
-        ${controllerName}/${actionName}"
+        ${controllerName}/${actionName}
     </div>
 </footer>

@@ -68,7 +68,6 @@
 			   $('#city').autocomplete({
 				 source: '<g:createLink controller='home' action='ajaxStockFinder'/>'
 			   });
-
 			});
     </g:javascript>
 

@@ -8,6 +8,7 @@ class UrlMappings {
             view = { 'index' }
         }
 
+        "/timeline"(view: "/timeline/index")
         /*
          * Pages without controller
          */

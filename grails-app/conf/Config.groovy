@@ -147,6 +147,7 @@ grails.plugin.springsecurity.rejectIfNoRule = true
 
 grails.plugin.springsecurity.interceptUrlMap = [
 //        '/stock/index':     ['ROLE_USER, ROLE_ADMIN, IS_AUTHENTICATED_FULLY'],
+        '/timeline/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
         '/home/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
         '/stock/**': ['ROLE_ADMIN'],
         '/portfolio/**': ['ROLE_ADMIN'],
