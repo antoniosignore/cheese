@@ -6,6 +6,8 @@ class TradeController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
+    def portfolioService
+
     def index() {
         redirect(action: "list", params: params)
     }
@@ -16,15 +18,27 @@ class TradeController {
     }
 
     def create() {
-        [tradeInstance: new Trade(params)]
+
+        Long portfolioId = Portfolio.get(params.get ("portfolioId") as Long)
+        Portfolio portfolio = Portfolio.load(portfolioId)
+
+        Trade trade = new Trade()
+        trade.setPortfolio(portfolio)
+
+        [tradeInstance: trade]
     }
 
     def save() {
         def tradeInstance = new Trade(params)
-        if (!tradeInstance.save(flush: true)) {
-            render(view: "create", model: [tradeInstance: tradeInstance])
-            return
-        }
+
+        portfolioService.add(tradeInstance)
+
+//        if (!tradeInstance.save(flush: true)) {
+//            render(view: "create", model: [tradeInstance: tradeInstance])
+//            return
+//        }
+
+        tradeInstance.portfolio.save()
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'trade.label', default: 'Trade'), tradeInstance.id])
         redirect(action: "show", id: tradeInstance.id)

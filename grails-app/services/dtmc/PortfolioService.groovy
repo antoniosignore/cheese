@@ -92,47 +92,47 @@ class PortfolioService {
         add(portfolio, item);
     }
 
-    public void add(Portfolio portfolio, Trade transaction) {
+    public void add(Trade transaction) {
 
-        if (trades == null) throw new IllegalArgumentException("trades cannot be null");
+        if (transaction == null) throw new IllegalArgumentException("trades cannot be null");
 
-        if (portfolio.id) transaction.save(flush: true)
+        if (transaction.portfolio.id) transaction.save(flush: true)
 
         Instrument instrument = transaction.instrument;
-        PortfolioEntry entry = entry(portfolio, instrument);
+        PortfolioEntry entry = entry(transaction.portfolio, instrument);
 
         if (entry == null) {
-            entry = new PortfolioEntry(instrument, portfolio);
+            entry = new PortfolioEntry(instrument, transaction.portfolio);
             if (transaction.getTradeAction() == TradeEnum.BUY) {
                 entry.setAmount(transaction.getAmount());
             } else if (transaction.getTradeAction() == TradeEnum.SELL) {
-                System.out.println("addTransaction. No long position on sell for " + transaction.instrument.name + " in " + portfolio.getName());
+                System.out.println("addTransaction. No long position on sell for " + transaction.instrument.name + " in " + transaction.portfolio.getName());
                 return;
             } else if (transaction.getTradeAction() == TradeEnum.SELLSHORT) {
                 entry.setAmount(-transaction.getAmount());
             } else if (transaction.getTradeAction() == TradeEnum.BUYSHORT) {
-                System.out.println("addTransaction. No short position on buy short for " + transaction.instrument.name + " in " + portfolio.getName());
+                System.out.println("addTransaction. No short position on buy short for " + transaction.instrument.name + " in " + transaction.portfolio.getName());
                 return;
             }
-            portfolio.addToTransactions(transaction);
-            add(portfolio, entry);
+            transaction.portfolio.addToTrades(transaction);
+            add(transaction.portfolio, entry);
         } else {
             int amount = 0;
             if (transaction.tradeAction == TradeEnum.BUY) {
                 if (entry.getAmount() < 0) {
-                    System.out.println("addTransaction. Short position on buy for " + transaction.instrument.name + " in " + portfolio.getName());
+                    System.out.println("addTransaction. Short position on buy for " + transaction.instrument.name + " in " + transaction.portfolio.getName());
                     return;
                 }
                 amount = entry.getAmount() + transaction.getAmount();
             } else if (transaction.tradeAction == TradeEnum.SELL) {
                 amount = entry.getAmount() - transaction.getAmount();
                 if (amount < 0) {
-                    System.out.println("addTransaction. Sell amount larger than long position for" + transaction.instrument.name + " in " + portfolio.getName());
+                    System.out.println("addTransaction. Sell amount larger than long position for" + transaction.instrument.name + " in " + transaction.portfolio.getName());
                     return;
                 }
             } else if (transaction.tradeAction == TradeEnum.SELLSHORT) {
                 if (entry.getAmount() > 0) {
-                    System.out.println("addTransaction. Long position in instrument on sell short: " + portfolio.getName());
+                    System.out.println("addTransaction. Long position in instrument on sell short: " + transaction.portfolio.getName());
                     return;
                 }
                 amount = entry.getAmount() - transaction.getAmount();
@@ -143,14 +143,14 @@ class PortfolioService {
                 }
                 amount = entry.getAmount() + transaction.getAmount();
                 if (amount > 0) {
-                    System.out.println("addTransaction. Buy short amount larger than short position: " + portfolio.getName());
+                    System.out.println("addTransaction. Buy short amount larger than short position: " + transaction.portfolio.getName());
                     return;
                 }
             }
-            portfolio.addToTransactions(transaction);
+            transaction.portfolio.addToTrades(transaction);
 
             if (amount == 0) {
-                remove(portfolio, instrument);
+                remove(transaction.portfolio, instrument);
             } else {
                 entry.setAmount(amount);
             }

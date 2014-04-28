@@ -146,9 +146,10 @@ grails.plugin.springsecurity.logout.postOnly = false
 grails.plugin.springsecurity.rejectIfNoRule = true
 
 grails.plugin.springsecurity.interceptUrlMap = [
-//        '/stock/index':     ['ROLE_USER, ROLE_ADMIN, IS_AUTHENTICATED_FULLY'],
+//      '/stock/index':     ['ROLE_USER, ROLE_ADMIN, IS_AUTHENTICATED_FULLY'],
         '/timeline/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
         '/home/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/trade/**': ['ROLE_ADMIN'],
         '/stock/**': ['ROLE_ADMIN'],
         '/portfolio/**': ['ROLE_ADMIN'],
         '/js/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
@@ -156,7 +157,7 @@ grails.plugin.springsecurity.interceptUrlMap = [
         '/images/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
         '/login/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
         '/logout/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/**': ['ROLE_ADMIN']
+//        '/**': ['ROLE_ADMIN']
 ]
 
 // Added by the JQuery Validation UI plugin:
@@ -164,7 +165,7 @@ jqueryValidationUi {
     errorClass = 'error'
     validClass = 'valid'
     onsubmit = true
-    renderErrorsOnTop = false
+    renderErrorsOnTop = true
 
     qTip {
         packed = true
