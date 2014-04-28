@@ -19,6 +19,8 @@ class TradeController {
 
     def create() {
 
+        println "portfolioId"  + params.get ("portfolioId")
+
         Long portfolioId = Portfolio.get(params.get ("portfolioId") as Long)
         Portfolio portfolio = Portfolio.load(portfolioId)
 
