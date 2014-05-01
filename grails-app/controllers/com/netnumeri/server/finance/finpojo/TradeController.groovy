@@ -21,7 +21,7 @@ class TradeController {
 
         println "portfolioId"  + params.get ("portfolioId")
 
-        Long portfolioId = Portfolio.get(params.get ("portfolioId") as Long)
+        Long portfolioId = params.get ("portfolioId") as Long
         Portfolio portfolio = Portfolio.load(portfolioId)
 
         Trade trade = new Trade()

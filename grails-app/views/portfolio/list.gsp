@@ -18,21 +18,18 @@
             <g:sortableColumn property="name"
                               title="${message(code: 'portfolio.name.label', default: 'Name')}"/>
 
-            %{--<g:sortableColumn property="dailyarray"--}%
-                              %{--title="${message(code: 'portfolio.dailyarray.label', default: 'Dailyarray')}"/>--}%
-%{----}%
-            %{--<g:sortableColumn property="dateCreated"--}%
-                              %{--title="${message(code: 'portfolio.dateCreated.label', default: 'Date Created')}"/>--}%
-%{----}%
             <g:sortableColumn property="description"
                               title="${message(code: 'portfolio.description.label', default: 'Description')}"/>
 
-            %{--<g:sortableColumn property="firstDate"--}%
-                              %{--title="${message(code: 'portfolio.firstDate.label', default: 'First Date')}"/>--}%
+            <g:sortableColumn property="wealth"
+                              title="${message(code: 'portfolio.m2m.label', default: 'Market value')}"/>
+
+            <g:sortableColumn property="wealth"
+                              title="${message(code: 'portfolio.wealth.label', default: 'Wealth')}"/>
+
 %{----}%
             %{--<g:sortableColumn property="highSeries"--}%
                               %{--title="${message(code: 'portfolio.highSeries.label', default: 'High Series')}"/>--}%
-
         </tr>
         </thead>
         <tbody>
@@ -43,6 +40,9 @@
                             id="${portfolioInstance.id}">${fieldValue(bean: portfolioInstance, field: "name")}</g:link></td>
 
                 <td>${fieldValue(bean: portfolioInstance, field: "description")}</td>
+
+                <td><g:formatDate date="${dtmc.PortfolioService.price(portfolioInstance)}"/></td>
+                <td><g:formatDate date="${dtmc.PortfolioService.wealth(portfolioInstance)}"/></td>
 
                 %{--<td><g:formatDate date="${portfolioInstance.firstDate}"/></td>--}%
 %{----}%

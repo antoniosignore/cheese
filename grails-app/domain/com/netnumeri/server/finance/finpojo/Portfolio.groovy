@@ -2,7 +2,14 @@ package com.netnumeri.server.finance.finpojo
 
 import Jama.Matrix
 import com.netnumeri.server.enums.PortfolioTypeEnum
+import com.netnumeri.server.finance.beans.FinConstants
+import com.netnumeri.server.finance.beans.TimeSeries
+import com.netnumeri.server.finance.beans.TradeEnum
+import com.netnumeri.server.finance.data.TransactionSeries
 import com.netnumeri.server.finance.finpojo.asset.Asset
+import com.netnumeri.server.finance.finpojo.derivative.Derivative
+import com.netnumeri.server.finance.utils.DateUtils
+import com.netnumeri.server.finance.utils.YahooUtils
 
 class Portfolio extends Asset implements Serializable {
 
@@ -74,5 +81,7 @@ class Portfolio extends Asset implements Serializable {
         p.lastDate = lastDate;
         return p;
     }
+
+
 
 }

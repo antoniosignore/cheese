@@ -14,8 +14,6 @@
     <link rel="shortcut icon" href="${resource(plugin: 'kickstart-with-bootstrap', dir: 'images', file: 'favicon.ico')}"
           type="image/x-icon"/>
 
-    <%-- Manual switch for the skin can be found in /view/_menu/_config.gsp --%>
-    %{--<r:require modules="jquery"/>--}%
     <r:external uri="/js/jquery-1.10.2.js"/>
 
     <r:require modules="bootstrap"/>
@@ -119,7 +117,6 @@
 </body>
 
 <style type="text/css">
-
 
 %{--.navbar-inner {--}%
 %{--background: none;--}%

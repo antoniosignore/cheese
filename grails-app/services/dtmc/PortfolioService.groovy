@@ -473,6 +473,10 @@ class PortfolioService {
         return m2m(portfolio, date);
     }
 
+    public double price(Portfolio portfolio) {
+        return m2m(portfolio, new Date());
+    }
+
     // Return portfolio premium If we consider a portfolio as one
     // financial instrument, its premium is equal to its value
     public double premium(Portfolio portfolio) {
@@ -526,8 +530,7 @@ class PortfolioService {
                 if (daily != null) {
                     value += daily.closeprice * amount;
                 } else {
-                    System.out.println("value. Out of data range");
-                    return 0;
+                    throw new IllegalArgumentException("date "+ date.toString()+ "not valid");
                 }
             }
             if (instrument instanceof Derivative) {
