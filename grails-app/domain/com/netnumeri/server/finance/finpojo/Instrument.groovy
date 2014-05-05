@@ -701,10 +701,8 @@ class Instrument extends Persistable implements Serializable {
         TimeSeries series = new TimeSeries();
 
         Date firstDailyDate = firstDailyDate();
-        println "firstDailyDate = $firstDailyDate"
 
         Date lastDailyDate = lastDailyDate();
-        println "lastDailyDate = $lastDailyDate"
 
         if (firstDate == null) firstDate = firstDailyDate;
         if (lastDate == null) lastDate = lastDailyDate;

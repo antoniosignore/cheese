@@ -1,7 +1,6 @@
 package com.netnumeri.server.finance.finpojo.asset
 
 import com.netnumeri.server.finance.beans.TimeSeries
-import com.netnumeri.server.finance.indicator.UserIndicators
 import com.netnumeri.server.finance.strategy.SSASignal
 import com.netnumeri.server.finance.strategy.Strategy
 import com.netnumeri.server.finance.ta.BollingerBandDiffIndicator
