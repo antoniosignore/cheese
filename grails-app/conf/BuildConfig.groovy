@@ -54,6 +54,11 @@ grails.project.dependency.resolution = {
 
         compile 'jfree:jfreechart:1.0.13'
 
+
+        runtime group:"org.twitter4j", name:"twitter4j-core", version:"4.0.1"
+        runtime group:"org.twitter4j", name:"twitter4j-async", version:"4.0.1"
+        runtime group:"org.twitter4j", name:"twitter4j-stream", version:"4.0.1"
+
 //        compile 'org.grails:grails-datastore-gorm:3.0.4.RELEASE'
 //        compile 'org.grails:grails-datastore-core:3.0.4.RELEASE'
 //        test 'org.grails:grails-datastore-simple:3.0.4.RELEASE'
@@ -91,12 +96,15 @@ grails.project.dependency.resolution = {
 
 //        compile ":mongodb:2.0.1"
 
-        compile ':feeds:1.6'
-        compile ':form-helper:0.2.8'
-        compile ":taggable:1.0.1"
-        compile ":tooltip:0.8"
-        compile ":twitter4j:0.3.2"
-        compile ":twitter-checker:0.2"
+//        compile ':feeds:1.6'
+//        compile ':form-helper:0.2.8'
+//        compile ":taggable:1.0.1"
+//        compile ":tooltip:0.8"
+        compile(":twitter4j:0.3.2") {
+            excludes "twitter4j-core", "twitter4j-async", "twitter4j-stream"
+        }
+
+//        compile ":twitter-checker:0.2"
 
     }
 }

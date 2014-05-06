@@ -159,7 +159,8 @@ grails.plugin.springsecurity.interceptUrlMap = [
         '/images/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
         '/login/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
         '/logout/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/**': ['ROLE_ADMIN']
+        '/twitter4j/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/**': ['IS_AUTHENTICATED_ANONYMOUSLY']
 ]
 
 // Added by the JQuery Validation UI plugin:
@@ -238,3 +239,31 @@ jqueryValidationUi {
             lettersonly: 'true'
     ]
 }
+
+/*
+API key LDdFsq60HIl8chtW3uM0Yl1A7
+API secret pxJoW4n5Cqou9k3oE5ApEmJKexgvMzTvw0D249mkpJQV45oqD6
+Access level Read, write, and direct messages (modify app permissions)
+Owner signore
+Owner ID 22603665
+
+Your access token
+This access token can be used to make API requests on your own account's behalf. Do not share your access token secret with anyone.
+Access token 22603665-bgESXvwPCkI3RGCKT5l74M4XzgA9Jh8NC8pFVNgpn
+Access token secret 0lkrNjktJKXcsFk7oYtJxy3CQnQ55CT5ZrzVCNC2AGcNC
+Access level Read-only
+Owner signore
+Owner ID 22603665
+ */
+
+twitter {
+//    disableTwitter4jController = true
+    'default' {
+        OAuthConsumerKey = 'LDdFsq60HIl8chtW3uM0Yl1A7'
+        OAuthConsumerSecret = 'pxJoW4n5Cqou9k3oE5ApEmJKexgvMzTvw0D249mkpJQV45oqD6'
+        OAuthAccessToken = '22603665-hXPuOfxsuLsa5znEEdM1RoAAmBk737Is6ojmG5moh'
+        OAuthAccessTokenSecret = 'F8ctEhrrXvmAwUYYlRRv9LG7KTDsU6qIzS9Lr3t8CqyRy'
+    }
+}
+
+//oauth_token=wRc1Nv5ZgGGNZTbkwP0pFtV9zxjZbBnaeWSQ0mJVxrA&oauth_verifier=PlCCTIm3nQzGx5jCLBw9lHQHRFISq7zzx5HDi5PbQ
