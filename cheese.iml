@@ -112,6 +112,12 @@
           <root url="jar://$M2_REPO$/org/apache/tomcat/tomcat-catalina-ant/7.0.42/tomcat-catalina-ant-7.0.42.jar!/" />
           <root url="jar://$M2_REPO$/gov/nist/math/jama/1.0.2/jama-1.0.2.jar!/" />
           <root url="jar://$M2_REPO$/bouncycastle/bcprov-jdk14/138/bcprov-jdk14-138.jar!/" />
+          <root url="jar://$M2_REPO$/rome/modules/0.3.2/modules-0.3.2.jar!/" />
+          <root url="jar://$M2_REPO$/jdom/jdom/1.0/jdom-1.0.jar!/" />
+          <root url="jar://$M2_REPO$/rome/rome/0.9/rome-0.9.jar!/" />
+          <root url="jar://$M2_REPO$/org/twitter4j/twitter4j-core/2.2.5/twitter4j-core-2.2.5.jar!/" />
+          <root url="jar://$M2_REPO$/org/twitter4j/twitter4j-stream/2.2.5/twitter4j-stream-2.2.5.jar!/" />
+          <root url="jar://$M2_REPO$/org/twitter4j/twitter4j-async/2.2.5/twitter4j-async-2.2.5.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

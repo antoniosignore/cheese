@@ -1,0 +1,30 @@
+
+Application settings
+Your application's API keys are used to authenticate requests to the Twitter Platform.
+Access level Read, write, and direct messages (modify app permissions)
+API key LDdFsq60HIl8chtW3uM0Yl1A7 (manage API keys)
+Callback URL http://www.cheese.com
+Sign in with Twitter Yes
+App-only authentication https://api.twitter.com/oauth2/token
+Request token URL https://api.twitter.com/oauth/request_token
+Authorize URL https://api.twitter.com/oauth/authorize
+Access token URL https://api.twitter.com/oauth/access_token
+
+
+
+API key LDdFsq60HIl8chtW3uM0Yl1A7
+API secret pxJoW4n5Cqou9k3oE5ApEmJKexgvMzTvw0D249mkpJQV45oqD6
+Access level Read, write, and direct messages (modify app permissions)
+Owner signore
+Owner ID 22603665 
+
+
+Your access token
+This access token can be used to make API requests on your own account's behalf. Do not share your access token secret with anyone.
+Access token 22603665-bgESXvwPCkI3RGCKT5l74M4XzgA9Jh8NC8pFVNgpn
+Access token secret 0lkrNjktJKXcsFk7oYtJxy3CQnQ55CT5ZrzVCNC2AGcNC
+Access level Read-only
+Owner signore
+Owner ID 22603665
+
+
