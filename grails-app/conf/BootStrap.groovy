@@ -3,8 +3,6 @@ import com.dtmc.club.Member
 import com.dtmc.security.SecRole
 import com.dtmc.security.SecUserSecRole
 import com.netnumeri.server.enums.*
-import com.netnumeri.server.finance.candlestick.Pattern
-import com.netnumeri.server.finance.finpojo.Portfolio
 import com.netnumeri.server.finance.finpojo.asset.Stock
 import com.netnumeri.server.finance.indicator.UserIndicators
 
@@ -72,18 +70,18 @@ class BootStrap {
             assert SecRole.count() == 3
             assert SecUserSecRole.count() == 3
 
-            Portfolio portfolio = new Portfolio("SMA crossing", "desc", 10000)
-            portfolio.portfolioType = PortfolioTypeEnum.Main
-            portfolio.user = adminUser
-            portfolio.save(failOnError: true, insert: true, flush: true)
-
-            println "portfolio.id = $portfolio.id"
-
-            Stock aapl = new Stock("AAPL", "Apple Computers");
-            aapl.save(flush: true)
-
-            // portfolioService.buy(portfolio, stock, 100);
-            portfolio.save(failOnError: true, insert: true, flush: true);
+//            Portfolio portfolio = new Portfolio("SMA crossing", "desc", 10000)
+//            portfolio.portfolioType = PortfolioTypeEnum.Main
+//            portfolio.user = adminUser
+//            portfolio.save(failOnError: true, insert: true, flush: true)
+//
+//            println "portfolio.id = $portfolio.id"
+//
+//            Stock aapl = new Stock("AAPL", "Apple Computers");
+//            aapl.save(flush: true)
+//
+//            // portfolioService.buy(portfolio, stock, 100);
+//            portfolio.save(failOnError: true, insert: true, flush: true);
 
             if (UserIndicators.getAll() == null || UserIndicators.getAll().size() == 0) {
 

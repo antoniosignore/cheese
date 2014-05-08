@@ -8,8 +8,6 @@ import twitter4j.TwitterFactory
 import twitter4j.auth.AccessToken
 import twitter4j.auth.RequestToken
 
-import javax.servlet.http.HttpServletResponse
-
 class Twitter4jController {
 
     Twitter4jService twitter4jService

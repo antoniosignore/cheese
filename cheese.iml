@@ -115,6 +115,9 @@
           <root url="jar://$M2_REPO$/org/twitter4j/twitter4j-stream/4.0.1/twitter4j-stream-4.0.1.jar!/" />
           <root url="jar://$M2_REPO$/org/twitter4j/twitter4j-async/4.0.1/twitter4j-async-4.0.1.jar!/" />
           <root url="jar://$M2_REPO$/org/twitter4j/twitter4j-core/4.0.1/twitter4j-core-4.0.1.jar!/" />
+          <root url="jar://$M2_REPO$/rome/modules/0.3.2/modules-0.3.2.jar!/" />
+          <root url="jar://$M2_REPO$/jdom/jdom/1.0/jdom-1.0.jar!/" />
+          <root url="jar://$M2_REPO$/rome/rome/0.9/rome-0.9.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

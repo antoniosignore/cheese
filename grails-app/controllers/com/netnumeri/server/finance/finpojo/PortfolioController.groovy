@@ -5,6 +5,7 @@ import org.springframework.dao.DataIntegrityViolationException
 class PortfolioController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+    def portfolioService
 
     def index() {
         redirect(action: "list", params: params)

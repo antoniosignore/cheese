@@ -96,10 +96,12 @@ grails.project.dependency.resolution = {
 
 //        compile ":mongodb:2.0.1"
 
-//        compile ':feeds:1.6'
+        compile ':feeds:1.6'
 //        compile ':form-helper:0.2.8'
-//        compile ":taggable:1.0.1"
+        compile ":taggable:1.0.1"
+
 //        compile ":tooltip:0.8"
+
         compile(":twitter4j:0.3.2") {
             excludes "twitter4j-core", "twitter4j-async", "twitter4j-stream"
         }
