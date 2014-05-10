@@ -17,15 +17,17 @@ class DailyService {
 
         def all = Stock.findAll()
 
-        println "all.size():"  + all.size()
         all.each { stock ->
 
-            List<Daily> dailies = Daily.findAllByInstrument(stock, [sort: "dailyDate", order: "asc"])
+            List<Daily> dailies = Daily.findAllByInstrument(stock, [sort: "dailydate", order: "asc"])
 
             println "dailies.size() = " + dailies.size()
-            println "dailies = " + dailies.get(0)
-            println "dailies = " + dailies.get(dailies.size() -1 )
 
+            if (dailies.size() > 0){
+                println "dailies = " + dailies.get(0)
+                println "dailies = " + dailies.get(dailies.size() -1 )
+
+            }
 
             stock.dailyarray.clear()
             StockUtils.refreshDaily(stock, da, a);

@@ -11,8 +11,6 @@ import com.netnumeri.server.finance.utils.DateUtils
 import com.netnumeri.server.finance.utils.YahooUtils
 import org.springframework.dao.DataIntegrityViolationException
 
-import java.text.SimpleDateFormat
-
 class StockController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST", showpost: "POST"]
@@ -56,6 +54,20 @@ class StockController {
             return
         }
 
+        // render(view: "show", model: [startDate: da, endDate: a, stockInstance: stockInstance, strategyInstance: strategy, indicators: list])
+
+        [stockInstance: stockInstance]
+    }
+
+
+    def charts () {
+
+        def stockInstance = Stock.get(params.id as Integer)
+        if (!stockInstance) {
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'stock.label', default: 'Stock'), params.id])
+            redirect(action: "list")
+            return
+        }
         try {
             Date da = DateUtils.todayThreeMonthsAgo()
             Date a = DateUtils.today()
@@ -175,7 +187,6 @@ class StockController {
             println "th = $th"
         }
 
-        render(view: "show", model: [startDate: da, endDate: a, stockInstance: stockInstance, strategyInstance: strategy, indicators: list])
     }
 
     def edit() {

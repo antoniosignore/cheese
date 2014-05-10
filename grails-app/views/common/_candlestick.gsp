@@ -71,11 +71,12 @@
         });
     });
 
-    ohlc = ${StockUtils.getCandleStickPlot(stockInstance)}
+    ohlc = ${StockUtils.candleStickPlot(stockInstance)}
     $(window).resize(function () {
         plot2.replot({ resetAxes: true });
     });
 </script>
 
 <div id="chart" style="height:150px; width:100%;"></div>
+
 

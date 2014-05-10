@@ -806,6 +806,10 @@ class Instrument extends Persistable implements Serializable {
                     int volume,
                     int openInterest) {
         Daily daily = new Daily(instrument, date, high, low, open, close, volume, openInterest);
-        daily.save(flush: true)
+        try {
+            daily.save(flush: true)
+        } catch (Throwable ex) {
+            println "ex = $ex"
+        }
     }
 }

@@ -169,7 +169,6 @@ class StockUtils {
         }
         sb.append("]")
         FileUtils.writeStringToFile(new File(name + ".txt"), sb.toString())
-
     }
 
     static String lastDate(Stock stock) {
@@ -182,7 +181,7 @@ class StockUtils {
         return sdf.format(stock.lastDate())
     }
 
-    static String getCandleStickPlot(Stock stock) {
+    static String candleStickPlot(Stock stock) {
         GenericTimeSeries<Daily> dailyarray = stock.dailyarray;
         Date startDate = dailyarray.firstDate()
         Date last = dailyarray.lastDate()
