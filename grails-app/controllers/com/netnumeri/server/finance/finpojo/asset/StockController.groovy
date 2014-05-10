@@ -37,7 +37,7 @@ class StockController {
             return
         }
 
-        flash.message = message(code: 'default.created.message', args: [message(code: 'stock.label', default: 'Stock'), stockInstance.id])
+        flash.message = message(code: 'default.created.message', args: [message(code: 'stock.label', default: 'Stock'), stockInstance.name])
         redirect(action: "show", id: stockInstance.id)
     }
 
@@ -54,20 +54,6 @@ class StockController {
             return
         }
 
-        // render(view: "show", model: [startDate: da, endDate: a, stockInstance: stockInstance, strategyInstance: strategy, indicators: list])
-
-        [stockInstance: stockInstance]
-    }
-
-
-    def charts () {
-
-        def stockInstance = Stock.get(params.id as Integer)
-        if (!stockInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'stock.label', default: 'Stock'), params.id])
-            redirect(action: "list")
-            return
-        }
         try {
             Date da = DateUtils.todayThreeMonthsAgo()
             Date a = DateUtils.today()
@@ -182,10 +168,18 @@ class StockController {
             stockInstance.indicators.put("lower", new SMAIndicator(closes, "SMA-" + 10, 10))
             Strategy strategy = new SMACrossoverSignal("test", stockInstance, da, a);
             // strategy.run();
+            render(view: "show", model: [startDate: da, endDate: a, stockInstance: stockInstance, strategyInstance: strategy, indicators: list])
         } catch (Throwable th) {
 
             println "th = $th"
         }
+
+//        [stockInstance: stockInstance]
+    }
+
+
+    def charts () {
+
 
     }
 
