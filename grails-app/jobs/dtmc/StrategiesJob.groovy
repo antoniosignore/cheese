@@ -21,9 +21,7 @@ class StrategiesJob {
 
     def execute() {
 
-        if (Daily.getAll() == null || Daily.getAll().size() == 0) {
-           dailyService.updateDailyDatabase()
-        }
+        dailyService.updateDailyDatabase()
 
         if (Pattern.getAll() == null || Pattern.getAll().size() == 0) {
 
