@@ -701,7 +701,6 @@ class Instrument extends Persistable implements Serializable {
         TimeSeries series = new TimeSeries();
 
         Date firstDailyDate = firstDailyDate();
-
         Date lastDailyDate = lastDailyDate();
 
         if (firstDate == null) firstDate = firstDailyDate;
@@ -776,9 +775,7 @@ class Instrument extends Persistable implements Serializable {
     }
 
     public boolean dailyData(Date date) {
-        if (dailyarray == null) {
-            return false;
-        }
+        if (dailyarray == null || dailyarray.size() == 0) throw new RuntimeException ("there are no daily data available")
         if (date == null) {
             return dailyarray.size() != 0;
         }
@@ -790,34 +787,15 @@ class Instrument extends Persistable implements Serializable {
     }
 
     public Date firstDailyDate() {
-        dailyarray.firstDate()
-
-        if (dailyarray == null || dailyarray.isEmpty()) {
-            return null
-        }
-        Daily daily = (Daily) dailyarray.firstValue();
-        if (daily != null)
-            return daily.getDailydate();
-        else
-            return null;
+        if (dailyarray == null || dailyarray.size() == 0) throw new RuntimeException ("there are no daily data available")
+        return dailyarray.firstDate()
     }
 
     public Date lastDailyDate() {
-        if (dailyarray == null || dailyarray.isEmpty()) {
-            return null
-        }
+        if (dailyarray == null || dailyarray.size() == 0) throw new RuntimeException ("there are no daily data available")
         Daily daily = (Daily) dailyarray.lastValue();
-        if (daily != null)
-            return daily.getDailydate();
-        else
-            return null;
-
-//        return dailyarray.lastDate();
+        return daily.getDailydate();
     }
-
-//    public void add(Daily daily) {
-//        dailyarray.put(DateUtils.toKey(daily.dailydate), daily);
-//    }
 
     public void add(Instrument instrument,
                     Date date,
@@ -829,6 +807,5 @@ class Instrument extends Persistable implements Serializable {
                     int openInterest) {
         Daily daily = new Daily(instrument, date, high, low, open, close, volume, openInterest);
         daily.save(flush: true)
-//        add(daily);
     }
 }
