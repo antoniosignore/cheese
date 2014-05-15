@@ -5,7 +5,6 @@ import com.netnumeri.server.finance.strategy.SSASignal
 import com.netnumeri.server.finance.strategy.Strategy
 import com.netnumeri.server.finance.ta.KFastStochasticIndicator
 import com.netnumeri.server.finance.ta.NormalizedSeriesIndicator
-import com.netnumeri.server.finance.ta.TrueRangeOverPeriodIndicator
 import com.netnumeri.server.finance.utils.DateUtils
 
 class KeyFastStochasticController {
@@ -29,7 +28,7 @@ class KeyFastStochasticController {
 
         Date da = DateUtils.todayThreeMonthsAgo()
         Date a = DateUtils.today()
-        dailyService.refreshStock(stockInstance, da, a)
+        dailyService.dailyFromDatabase(stockInstance, da, a)
         TimeSeries closeSeries = stockInstance.buildCloseSeries()
         stockInstance.indicators.put("normalized", new NormalizedSeriesIndicator(closeSeries, "Normalized"))
         stockInstance.indicators.put("kfs", new KFastStochasticIndicator(stockInstance, "K Fast Stochastic Indicator", 10))

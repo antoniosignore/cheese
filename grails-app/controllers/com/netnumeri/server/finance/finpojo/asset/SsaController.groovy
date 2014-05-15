@@ -1,13 +1,10 @@
 package com.netnumeri.server.finance.finpojo.asset
 
-import com.netnumeri.server.finance.beans.FinConstants
 import com.netnumeri.server.finance.beans.TimeSeries
-import com.netnumeri.server.finance.indicator.UserIndicators
 import com.netnumeri.server.finance.strategy.SSASignal
 import com.netnumeri.server.finance.strategy.Strategy
 import com.netnumeri.server.finance.ta.*
 import com.netnumeri.server.finance.utils.DateUtils
-import com.netnumeri.server.utils.StockUtils
 
 class SsaController {
 
@@ -30,7 +27,7 @@ class SsaController {
 
         Date da = DateUtils.todayThreeMonthsAgo()
         Date a = DateUtils.today()
-        dailyService.refreshStock(stockInstance, da, a)
+        dailyService.dailyFromDatabase(stockInstance, da, a)
         TimeSeries closeSeries = stockInstance.buildCloseSeries()
         stockInstance.indicators.put("normalized", new NormalizedSeriesIndicator(closeSeries, "Normalized"))
 

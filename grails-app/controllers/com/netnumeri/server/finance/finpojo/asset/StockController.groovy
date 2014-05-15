@@ -57,7 +57,7 @@ class StockController {
         try {
             Date da = DateUtils.todayThreeMonthsAgo()
             Date a = DateUtils.today()
-            dailyService.refreshStock(stockInstance, da, a)
+            dailyService.dailyFromDatabase(stockInstance, da, a)
             List<UserIndicators> list = UserIndicators.list()
             TimeSeries closes = stockInstance.series(FinConstants.CLOSE, da, a);
 

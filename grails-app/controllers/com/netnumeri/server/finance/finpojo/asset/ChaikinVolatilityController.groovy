@@ -26,7 +26,7 @@ class ChaikinVolatilityController {
 
         Date da = DateUtils.todayThreeMonthsAgo()
         Date a = DateUtils.today()
-        dailyService.refreshStock(stockInstance, da, a)
+        dailyService.dailyFromDatabase(stockInstance, da, a)
         TimeSeries closeSeries = stockInstance.buildCloseSeries()
         stockInstance.indicators.put("normalized", new NormalizedSeriesIndicator(closeSeries, "Normalized"))
         stockInstance.indicators.put("cv", new ChaikinVolatilityIndicator(stockInstance, "Chaikin Volatility Indicator", 10,20))

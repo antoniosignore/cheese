@@ -35,7 +35,7 @@ class DailyService {
 
     }
 
-    public void refreshStock (Stock stock, Date da, Date a){
+    public void dailyFromDatabase(Stock stock, Date da, Date a){
 
        def criteria =  new DetachedCriteria(Daily).build {
                 eq('instrument.id', stock.getId())

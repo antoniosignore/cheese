@@ -230,8 +230,6 @@ public class YahooUtils {
             Date yahoo = DateUtils.toYahoo(date)
 
             println "yahoo = $yahoo"
-
-
             instrument.addDaily(yahoo, high, low, open, close, (int) volume, 0);
         }
         NetUtils.closeURL(is);

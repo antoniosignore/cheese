@@ -1,5 +1,5 @@
 
-<g:render template="/common/snapshot"/>
+%{--<g:render template="/common/snapshot"/>--}%
 
 <g:if test="${stockInstance.dailyarray}">
 

@@ -1,6 +1,5 @@
 package com.netnumeri.server.finance.finpojo.asset
 
-import com.netnumeri.server.enums.IndicatorEnum
 import com.netnumeri.server.finance.beans.TimeSeries
 import com.netnumeri.server.finance.strategy.SSASignal
 import com.netnumeri.server.finance.strategy.Strategy
@@ -28,7 +27,7 @@ class PriceChannelController {
 
         Date da = DateUtils.todayThreeMonthsAgo()
         Date a = DateUtils.today()
-        dailyService.refreshStock(stockInstance, da, a)
+        dailyService.dailyFromDatabase(stockInstance, da, a)
         TimeSeries closeSeries = stockInstance.buildCloseSeries()
         stockInstance.indicators.put("normalized", new NormalizedSeriesIndicator(closeSeries, "Normalized"))
 

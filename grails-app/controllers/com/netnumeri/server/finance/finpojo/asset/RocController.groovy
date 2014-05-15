@@ -3,7 +3,6 @@ package com.netnumeri.server.finance.finpojo.asset
 import com.netnumeri.server.finance.beans.TimeSeries
 import com.netnumeri.server.finance.strategy.SSASignal
 import com.netnumeri.server.finance.strategy.Strategy
-import com.netnumeri.server.finance.ta.CommodityChannelIndicator
 import com.netnumeri.server.finance.ta.NormalizedSeriesIndicator
 import com.netnumeri.server.finance.ta.RateOfChangeOverPeriodIndicator
 import com.netnumeri.server.finance.utils.DateUtils
@@ -29,7 +28,7 @@ class RocController {
 
         Date da = DateUtils.todayThreeMonthsAgo()
         Date a = DateUtils.today()
-        dailyService.refreshStock(stockInstance, da, a)
+        dailyService.dailyFromDatabase(stockInstance, da, a)
         TimeSeries closeSeries = stockInstance.buildCloseSeries()
         stockInstance.indicators.put("roc", new RateOfChangeOverPeriodIndicator(closeSeries, "Rate of Change", 10))
         stockInstance.indicators.put("normalized", new NormalizedSeriesIndicator(closeSeries, "Normalized"))

@@ -3,10 +3,7 @@ package com.netnumeri.server.finance.finpojo.asset
 import com.netnumeri.server.finance.beans.TimeSeries
 import com.netnumeri.server.finance.strategy.SSASignal
 import com.netnumeri.server.finance.strategy.Strategy
-import com.netnumeri.server.finance.ta.Indicator
 import com.netnumeri.server.finance.ta.NormalizedSeriesIndicator
-import com.netnumeri.server.finance.ta.PriceChannelLowerIndicator
-import com.netnumeri.server.finance.ta.PriceChannelUpIndicator
 import com.netnumeri.server.finance.ta.RSIIndicator
 import com.netnumeri.server.finance.utils.DateUtils
 
@@ -31,7 +28,7 @@ class RsiController {
 
         Date da = DateUtils.todayThreeMonthsAgo()
         Date a = DateUtils.today()
-        dailyService.refreshStock(stockInstance, da, a)
+        dailyService.dailyFromDatabase(stockInstance, da, a)
         TimeSeries closeSeries = stockInstance.buildCloseSeries()
         stockInstance.indicators.put("normalized", new NormalizedSeriesIndicator(closeSeries, "Normalized"))
         stockInstance.indicators.put("rsi", new RSIIndicator(closeSeries, "RSI",14))
