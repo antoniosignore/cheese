@@ -217,9 +217,9 @@ class Instrument extends Persistable implements Serializable {
     }
 
 
-    public Daily getDaily(Date date) {
-        return daily(date);
-    }
+//    public Daily getDaily(Date date) {
+//        return daily(date);
+//    }
 
     public double premium() {
         return price(new Date(), FinConstants.TYPICALPRICE);
@@ -285,7 +285,7 @@ class Instrument extends Persistable implements Serializable {
 
     public double getLast(Date date) {
         if (date == null) throw new IllegalArgumentException("date cannot be null");
-        Daily daily = getDaily(date);
+        Daily daily = daily(date);
         while (daily == null) {
             daily = getPrevDaily(date);
         }
@@ -308,7 +308,7 @@ class Instrument extends Persistable implements Serializable {
         int lastIndex = getLastIndex();
 
         for (int i = firstIndex; i <= lastIndex; i++) {
-            Daily daily = getDaily(i);
+            Daily daily = daily(i);
             Date date = daily.getDailydate();
             double price = daily.price();
             if (daily != null && price != 0) {

@@ -55,9 +55,12 @@ grails.project.dependency.resolution = {
         compile 'jfree:jfreechart:1.0.13'
 
 
+	compile "com.google.guava:guava:13.0"
+
         runtime group:"org.twitter4j", name:"twitter4j-core", version:"4.0.1"
         runtime group:"org.twitter4j", name:"twitter4j-async", version:"4.0.1"
         runtime group:"org.twitter4j", name:"twitter4j-stream", version:"4.0.1"
+
 
 //        compile 'org.grails:grails-datastore-gorm:3.0.4.RELEASE'
 //        compile 'org.grails:grails-datastore-core:3.0.4.RELEASE'
@@ -107,6 +110,9 @@ grails.project.dependency.resolution = {
         }
 
 //        compile ":twitter-checker:0.2"
+
+//        compile ':asset-pipeline:1.8.3'
+//        compile ":spring-security-rest:1.4.0.M2"
 
     }
 }

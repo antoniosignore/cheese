@@ -34,7 +34,7 @@ class IndicatorUtils {
         double SMA = SMA(instrument, date, order, option);
         double SMV = 0;
         int Count = 0;
-        Daily daily = instrument.getDaily(date);
+        Daily daily = instrument.daily(date);
         while (daily != null && Count < order) {
             switch (option) {
                 case FinConstants.HIGH:
@@ -92,7 +92,7 @@ class IndicatorUtils {
         if (instrument == null) throw new IllegalArgumentException("instrument cannot be null");
         double MOM = 0;
         int Count = 0;
-        Daily daily = instrument.getDaily(date);
+        Daily daily = instrument.daily(date);
             switch (option) {
                 case FinConstants.HIGH:
                     MOM = daily.high;

@@ -57,8 +57,8 @@ public class Trade implements Serializable {
         if (instrument == null) throw new IllegalArgumentException("instrument cannot be null");
         this.instrument = instrument;
 
-        Daily daily = instrument.getDaily(tradeDate);
-        if (daily != null && daily.valid()) {
+        Daily daily = instrument.daily(tradeDate);
+        if (daily != null) {
             this.price = daily.price(FinConstants.CLOSE);
         } else {
             System.out.println("Trade. No valid daily data available for " + instrument.getName() + " " + tradeDate.toString());
@@ -75,7 +75,7 @@ public class Trade implements Serializable {
         if (tradeDate == null) throw new IllegalArgumentException("date cannot be null");
         if (cost == null) throw new IllegalArgumentException("cost cannot be null");
         this.instrument = instrument;
-        Daily daily = instrument.getDaily(tradeDate);
+        Daily daily = instrument.daily(tradeDate);
         this.price = daily.price(Option);
         this.tradeDate = tradeDate;
         this.tradeAction = tradeAction;

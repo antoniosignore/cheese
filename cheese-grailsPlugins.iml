@@ -237,6 +237,7 @@
           <root url="jar://$M2_REPO$/rome/modules/0.3.2/modules-0.3.2.jar!/" />
           <root url="jar://$M2_REPO$/jdom/jdom/1.0/jdom-1.0.jar!/" />
           <root url="jar://$M2_REPO$/rome/rome/0.9/rome-0.9.jar!/" />
+          <root url="jar://$M2_REPO$/com/google/guava/guava/13.0/guava-13.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

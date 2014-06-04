@@ -160,8 +160,19 @@ grails.plugin.springsecurity.interceptUrlMap = [
         '/login/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
         '/logout/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
         '/twitter4j/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/assets/**':           ['permitAll'],
+        '/partials/**':         ['permitAll'],
         '/**': ['IS_AUTHENTICATED_ANONYMOUSLY']
 ]
+
+grails.plugin.springsecurity.rememberMe.persistent = false
+//grails.plugin.springsecurity.rest.login.useJsonCredentials = true
+//grails.plugin.springsecurity.rest.login.failureStatusCode = 401
+//grails.plugin.springsecurity.rest.token.storage.useGorm = true
+//grails.plugin.springsecurity.rest.token.storage.gorm.tokenDomainClassName = 'com.asoftwareguy.example.auth.AuthenticationToken'
+//grails.plugin.springsecurity.rest.token.storage.gorm.tokenValuePropertyName = 'token'
+//grails.plugin.springsecurity.rest.token.storage.gorm.usernamePropertyName = 'username'
+
 
 // Added by the JQuery Validation UI plugin:
 jqueryValidationUi {

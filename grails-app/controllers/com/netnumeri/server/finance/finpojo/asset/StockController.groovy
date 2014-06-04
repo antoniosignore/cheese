@@ -54,10 +54,16 @@ class StockController {
             return
         }
 
+
+        println "******************************\nstockInstance = $stockInstance"
+
         try {
             Date da = DateUtils.todayThreeMonthsAgo()
             Date a = DateUtils.today()
             dailyService.dailyFromDatabase(stockInstance, da, a)
+
+            println "========> stockInstance.dailyarray =  " + stockInstance.dailyarray
+
             List<UserIndicators> list = UserIndicators.list()
             TimeSeries closes = stockInstance.series(FinConstants.CLOSE, da, a);
 
@@ -174,7 +180,7 @@ class StockController {
             println "th = $th"
         }
 
-//        [stockInstance: stockInstance]
+        [stockInstance: stockInstance]
     }
 
 
