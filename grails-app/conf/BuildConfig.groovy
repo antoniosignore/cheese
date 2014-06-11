@@ -65,6 +65,8 @@ grails.project.dependency.resolution = {
 //        compile 'org.grails:grails-datastore-gorm:3.0.4.RELEASE'
 //        compile 'org.grails:grails-datastore-core:3.0.4.RELEASE'
 //        test 'org.grails:grails-datastore-simple:3.0.4.RELEASE'
+
+//        runtime ":angularjs-resources:<plugin-version>"
     }
 
     plugins {
@@ -113,6 +115,8 @@ grails.project.dependency.resolution = {
 
 //        compile ':asset-pipeline:1.8.3'
 //        compile ":spring-security-rest:1.4.0.M2"
+
+        compile ":angularjs-resources:1.2.16"
 
     }
 }

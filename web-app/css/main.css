@@ -36,7 +36,9 @@ html * {
     margin: 0;
 }
 
+
 body {
+    font-family: 'Tangerine', serif;
     background: #ffffff;
     color: #333333;
     margin: 0 auto;

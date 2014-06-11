@@ -47,7 +47,7 @@ class StockController {
         println "params.to = $params.to"
         println "params.from = $params.from"
 
-        def stockInstance = Stock.get(params.id as Integer)
+        def stockInstance = Stock.load(params.id as Integer)
         if (!stockInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'stock.label', default: 'Stock'), params.id])
             redirect(action: "list")

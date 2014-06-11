@@ -14,6 +14,9 @@
     <link rel="shortcut icon" href="${resource(plugin: 'kickstart-with-bootstrap', dir: 'images', file: 'favicon.ico')}"
           type="image/x-icon"/>
 
+    %{--<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>--}%
+    <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+
     <r:external uri="/js/jquery-1.10.2.js"/>
 
     <r:require modules="bootstrap"/>

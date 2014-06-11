@@ -9,7 +9,7 @@ import com.netnumeri.server.finance.utils.DateUtils
 class Instrument extends Persistable implements Serializable {
 
     GenericTimeSeries<Daily> dailyarray = new GenericTimeSeries<Daily>();
-//    static hasMany = [dailyArray: Daily]
+    static hasMany = [dailyArray: Daily]
 
     static mapping = {
         tablePerHierarchy false

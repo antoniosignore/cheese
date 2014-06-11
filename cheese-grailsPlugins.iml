@@ -15,6 +15,8 @@
           <root url="file://$USER_HOME$/.grails/2.3.1/projects/dtmc/plugins/twitter4j-0.3.2/grails-app/views" relative="/" />
           <root url="file://$USER_HOME$/.grails/2.3.1/projects/dtmc/plugins/raphael-2.0.1/web-app" relative="/" />
           <root url="file://$USER_HOME$/.grails/2.3.1/projects/dtmc/plugins/taggable-1.0.1/web-app" relative="/" />
+          <root url="file://$USER_HOME$/.grails/2.3.1/projects/dtmc/plugins/angularjs-resources-1.2.16/web-app" relative="/" />
+          <root url="file://$USER_HOME$/.grails/2.3.1/projects/dtmc/plugins/angularjs-resources-1.2.16/grails-app/views" relative="/" />
         </webroots>
         <sourceRoots />
       </configuration>
@@ -88,6 +90,9 @@
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
+    <content url="file://$USER_HOME$/.grails/2.3.1/projects/dtmc/plugins/angularjs-resources-1.2.16">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.3.1/projects/dtmc/plugins/angularjs-resources-1.2.16/grails-app/controllers" isTestSource="false" />
+    </content>
     <content url="file://$USER_HOME$/.grails/2.3.1/projects/dtmc/plugins/cache-1.0.1">
       <sourceFolder url="file://$USER_HOME$/.grails/2.3.1/projects/dtmc/plugins/cache-1.0.1/src/java" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/.grails/2.3.1/projects/dtmc/plugins/cache-1.0.1/src/groovy" isTestSource="false" />
