@@ -216,11 +216,6 @@ class Instrument extends Persistable implements Serializable {
         return dataAvailable(date);
     }
 
-
-//    public Daily getDaily(Date date) {
-//        return daily(date);
-//    }
-
     public double premium() {
         return price(new Date(), FinConstants.TYPICALPRICE);
     }
@@ -804,10 +799,11 @@ class Instrument extends Persistable implements Serializable {
                     double open,
                     double close,
                     int volume,
-                    int openInterest) {
+                    int openInterest,
+                    def isSaved = false) {
         Daily daily = new Daily(instrument, date, high, low, open, close, volume, openInterest);
         try {
-            daily.save(flush: true)
+            if (isSaved) daily.save(flush: true)
         } catch (Throwable ex) {
             println "ex = $ex"
         }

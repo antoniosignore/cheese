@@ -33,7 +33,7 @@ class SSAAnalysisTest {
         FileUtils.writeStringToFile(new File(dir + "stock.txt"), closes.getTimeplotSeries())
         FileUtils.writeStringToFile(new File(dir + "stock.raw"), closes.getNoDateSeries())
 
-        SSAStudy.study(stock, 50);
+        SSAStudy.analyze(stock, 50);
 
 //        SSAAnalysis analysis = new SSAAnalysis(closes.convertToList(), 50)
 //
