@@ -116,7 +116,9 @@ grails.project.dependency.resolution = {
 //        compile ':asset-pipeline:1.8.3'
 //        compile ":spring-security-rest:1.4.0.M2"
 
-        compile ":angularjs-resources:1.2.16"
+//        compile ":angularjs-resources:1.2.16"
+
+        runtime ":cors:1.1.4"
 
     }
 }
