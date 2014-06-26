@@ -71,17 +71,39 @@ grails.project.dependency.resolution = {
 
     plugins {
 
-        runtime ":hibernate:3.6.10.2"
-        build ":tomcat:7.0.42"
+        build ":tomcat:7.0.52.1"
 
-//        runtime ":jquery:1.10.2"
-        runtime ":resources:1.1.6"
+        // plugins for the compile step
+//        compile ":scaffolding:2.0.2"
+        compile ":scaffolding:2.0.2"
+        compile ':cache:1.1.1'
+
+        // plugins needed at runtime but not for compilation
+        runtime ":hibernate:3.6.10.9" // or ":hibernate4:4.3.4"
+        runtime ":database-migration:1.3.8"
+        runtime ":jquery:1.11.0.2"
+        runtime ":resources:1.2.7"
+        // Uncomment these (or add new ones) to enable additional resources capabilities
+        //runtime ":zipped-resources:1.0.1"
+        //runtime ":cached-resources:1.1"
+        //runtime ":yui-minify-resources:0.1.5"
+
+        // An alternative to the default resources plugin is the asset-pipeline plugin
+        //compile ":asset-pipeline:1.6.1"
+
+        // Uncomment these to enable additional asset-pipeline capabilities
+        //compile ":sass-asset-pipeline:1.5.5"
+        //compile ":less-asset-pipeline:1.5.3"
+        //compile ":coffee-asset-pipeline:1.5.0"
+        //compile ":handlebars-asset-pipeline:1.3.0.1"
+
+        compile ":gson:1.1.4"
+
 
         runtime ':kickstart-with-bootstrap:0.9.6'
-        runtime ':lesscss-resources:1.3.1'
-        runtime ':font-awesome-resources:3.0'
+//        runtime ':lesscss-resources:1.3.1'
+//        runtime ':font-awesome-resources:3.0'
 
-        compile ':gson:1.1.4'
 
         runtime ":raphael:2.0.1"
 
@@ -94,7 +116,7 @@ grails.project.dependency.resolution = {
 
         compile ':cache:1.0.1'
 
-        compile ":scaffolding:1.0.0"
+//        compile ":scaffolding:1.0.0"
 
         compile ":spring-security-core:2.0-RC2"
         compile ":quartz:1.0.1"
@@ -107,9 +129,9 @@ grails.project.dependency.resolution = {
 
 //        compile ":tooltip:0.8"
 
-        compile(":twitter4j:0.3.2") {
-            excludes "twitter4j-core", "twitter4j-async", "twitter4j-stream"
-        }
+//        compile(":twitter4j:0.3.2") {
+//            excludes "twitter4j-core", "twitter4j-async", "twitter4j-stream"
+//        }
 
 //        compile ":twitter-checker:0.2"
 
@@ -118,7 +140,8 @@ grails.project.dependency.resolution = {
 
 //        compile ":angularjs-resources:1.2.16"
 
-        runtime ":cors:1.1.4"
+//        compile ":searchable:0.6.5"
+//        runtime ":cors:1.1.4"
 
     }
 }
