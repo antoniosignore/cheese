@@ -145,25 +145,6 @@ grails.plugin.springsecurity.password.algorithm = 'SHA-512'
 grails.plugin.springsecurity.logout.postOnly = false
 grails.plugin.springsecurity.rejectIfNoRule = true
 
-grails.plugin.springsecurity.interceptUrlMap = [
-//      '/stock/index':     ['ROLE_USER, ROLE_ADMIN, IS_AUTHENTICATED_FULLY'],
-        '/timeline/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/home/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/trade/**': ['ROLE_ADMIN'],
-        '/stock/**': ['ROLE_ADMIN'],
-        '/instrument/**': ['ROLE_ADMIN'],
-        '/portfolio/**': ['ROLE_ADMIN'],
-        '/portfolioEntry/**': ['ROLE_ADMIN'],
-        '/js/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/css/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/images/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/login/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/logout/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/twitter4j/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/assets/**':           ['permitAll'],
-        '/partials/**':         ['permitAll'],
-        '/**': ['IS_AUTHENTICATED_ANONYMOUSLY']
-]
 
 grails.plugin.springsecurity.rememberMe.persistent = false
 //grails.plugin.springsecurity.rest.login.useJsonCredentials = true
@@ -279,3 +260,51 @@ twitter {
 
 //oauth_token=wRc1Nv5ZgGGNZTbkwP0pFtV9zxjZbBnaeWSQ0mJVxrA&oauth_verifier=PlCCTIm3nQzGx5jCLBw9lHQHRFISq7zzx5HDi5PbQ
 
+// Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.requestMap.className = 'com.dtmc.security.Requestmap'
+grails.plugin.springsecurity.securityConfigType = 'InterceptUrlMap'
+grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+        '/':                              ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/index':                         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/index.gsp':                     ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/**/js/**':                      ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/**/css/**':                     ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/**/images/**':                  ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/**/favicon.ico':                ['IS_AUTHENTICATED_ANONYMOUSLY']
+]
+
+
+grails.plugin.springsecurity.interceptUrlMap = [
+        '/app/**':             ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/login/**':          ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/logout/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/home/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/trade/**': ['ROLE_ADMIN'],
+        '/stock/**': ['ROLE_ADMIN'],
+        '/instrument/**': ['ROLE_ADMIN'],
+        '/portfolio/**': ['ROLE_ADMIN'],
+        '/portfolioEntry/**': ['ROLE_ADMIN'],
+        '/partials/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/**': ['IS_AUTHENTICATED_ANONYMOUSLY']
+]
+
+//grails.plugin.springsecurity.interceptUrlMap = [
+//        '/app/**':             ['permitAll'],
+//        '/**/js/**':          ['permitAll'],
+//        '/**/css/**':         ['permitAll'],
+//        '/**/images/**':      ['permitAll'],
+//        '/**/favicon.ico':    ['permitAll'],
+//        '/login/**':          ['permitAll'],
+//        '/logout/**':         ['permitAll'],
+//        '/api/status':          ['permitAll'],
+//        '/**':				  ['isFullyAuthenticated()']
+//]
+
+grails.plugin.springsecurity.useBasicAuth = true
+
+grails.plugin.springsecurity.filterChain.chainMap = [
+//	'/api/**':'JOINED_FILTERS,-exceptionTranslationFilter',
+'/api/**': 'statelessSecurityContextPersistenceFilter,' +
+        'logoutFilter,authenticationProcessingFilter,customBasicAuthenticationFilter,securityContextHolderAwareRequestFilter,rememberMeAuthenticationFilter,anonymousAuthenticationFilter,basicExceptionTranslationFilter,filterInvocationInterceptor',
+//	'/**': 'JOINED_FILTERS,-basicAuthenticationFilter,-basicExceptionTranslationFilter'
+]

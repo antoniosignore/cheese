@@ -1,6 +1,7 @@
 'use strict';
 
 /* App Module */
+var httpHeaders, message;
 
 var phonecatApp = angular.module('phonecatApp', [
   'ngRoute',
@@ -11,8 +12,8 @@ var phonecatApp = angular.module('phonecatApp', [
   'phonecatServices'
 ]);
 
-phonecatApp.config(['$routeProvider',
-  function($routeProvider) {
+phonecatApp.config(['$routeProvider', function($routeProvider) {
+
     $routeProvider.
       when('/phones', {
         templateUrl: 'partials/phone-list.html',
@@ -25,4 +26,9 @@ phonecatApp.config(['$routeProvider',
       otherwise({
         redirectTo: '/phones'
       });
+
   }]);
+
+
+
+

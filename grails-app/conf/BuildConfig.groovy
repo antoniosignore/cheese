@@ -143,5 +143,7 @@ grails.project.dependency.resolution = {
 //        compile ":searchable:0.6.5"
 //        runtime ":cors:1.1.4"
 
+        compile ":arrested:1.31"
+
     }
 }
