@@ -4,11 +4,39 @@
 
 var phonecatControllers = angular.module('phonecatControllers', []);
 
+phonecatControllers.controller('AppCtrl', ['$scope', '$rootScope', '$http', 'i18n', '$location', 'apiUrl', function ($scope, $rootScope, $http, i18n, $location, apiUrl) {
+    $scope.language = function () {
+        return i18n.language;
+    };
+    $scope.setLanguage = function (lang) {
+        i18n.setLanguage(lang);
+    };
+    $scope.activeWhen = function (value) {
+        return value ? 'active' : '';
+    };
+
+    $scope.path = function () {
+        return $location.url();
+    };
+
+    $scope.login = function () {
+        $scope.$emit('event:loginRequest', $scope.username, $scope.password);
+    };
+
+    $scope.logout = function () {
+        $rootScope.user = null;
+        $scope.username = $scope.password = null;
+        $scope.$emit('event:logoutRequest');
+    };
+
+}]);
+
 phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
     function ($scope, Phone) {
         $scope.phones = Phone.query();
         $scope.orderProp = 'age';
-    }]);
+    }
+]);
 
 phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone',
 
