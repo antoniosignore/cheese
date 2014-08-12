@@ -22,6 +22,7 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Ph
         }
     }]);
 
+
 phonecatControllers.controller('AppCtrl', ['$scope', '$rootScope', '$http', 'i18n', '$location', 'apiUrl', function ($scope, $rootScope, $http, i18n, $location, apiUrl) {
     $scope.language = function () {
         return i18n.language;
