@@ -12,18 +12,32 @@ var phonecatApp = angular.module('phonecatApp', [
   'phonecatServices'
 ]);
 
+phonecatApp.value('version', '1.0.7');
+phonecatApp.value('apiUrl', 'http://localhost:8080/dtmc/api');
+
+
 phonecatApp.config(['$routeProvider', function($routeProvider) {
 
-    $routeProvider.
-      when('/phones', {
-        templateUrl: 'partials/phone-list.html', controller: 'PhoneListCtrl'
-      }).
-      when('/phones/:phoneId', {
-        templateUrl: 'partials/phone-detail.html', controller: 'PhoneDetailCtrl'
-      }).
-      otherwise({
-        redirectTo: '/phones'
-      });
+    $routeProvider
+        .when('/books', {templateUrl: 'partials/books.html', controller: 'BookListCtrl'})
+        .when('/new', {templateUrl: 'partials/new.html', controller: 'NewBookCtrl'})
+        .when('/edit/:id', {templateUrl: 'partials/edit.html', controller: 'EditBookCtrl'})
+        .otherwise({redirectTo: '/'});
+
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common["X-Requested-With"];
+    console.log('@X-Requested-With@' + $httpProvider.defaults.headers.common["X-Requested-With"])
+//
+//    $routeProvider.
+//      when('/phones', {
+//        templateUrl: 'partials/phone-list.html', controller: 'PhoneListCtrl'
+//      }).
+//      when('/phones/:phoneId', {
+//        templateUrl: 'partials/phone-detail.html', controller: 'PhoneDetailCtrl'
+//      }).
+//      otherwise({
+//        redirectTo: '/phones'
+//      });
 
   }]);
 
@@ -168,8 +182,6 @@ phonecatApp.run(function ($rootScope, $http, $location, base64, apiUrl) {
 
 
 
-
-
 var TodoApp = angular.module("TodoApp", ["ngResource"]).
     config(function($routeProvider) {
         $routeProvider.
@@ -251,8 +263,6 @@ var EditCtrl = function ($scope, $routeParams, $location, Todo) {
 };
 
 
-
-
 TodoApp.directive('sorted', function() {
     return {
         scope: true,
@@ -272,8 +282,5 @@ TodoApp.directive('sorted', function() {
         }
     };
 });
-
-
-
 
 

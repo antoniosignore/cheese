@@ -14,7 +14,10 @@
     <r:layoutResources />
 </head>
 
+
 <body ng-controller="AppCtrl">
+
+<div class="view-container" ng-app="phonecatApp">
 
 <div class="navbar">
     <div class="navbar-inner">
@@ -90,11 +93,9 @@
     </div>
 </div>
 
-<body>
-
 %{--<div class="view-container" ng-app="phonecatApp">--}%
     %{--<div ng-view class="view-frame"></div>--}%
-%{--</div>--}%
+</div>
 
 <r:layoutResources />
 
