@@ -87,6 +87,8 @@ log4j = {
             'org.codehaus.groovy.grails.orm.hibernate',
             'org.hibernate',
             'net.sf.ehcache.hibernate'
+
+    debug 'org.springframework.security'
 }
 
 
@@ -145,14 +147,7 @@ grails.plugin.springsecurity.password.algorithm = 'SHA-512'
 grails.plugin.springsecurity.logout.postOnly = false
 grails.plugin.springsecurity.rejectIfNoRule = true
 
-
-grails.plugin.springsecurity.rememberMe.persistent = false
-//grails.plugin.springsecurity.rest.login.useJsonCredentials = true
-//grails.plugin.springsecurity.rest.login.failureStatusCode = 401
-//grails.plugin.springsecurity.rest.token.storage.useGorm = true
-//grails.plugin.springsecurity.rest.token.storage.gorm.tokenDomainClassName = 'com.asoftwareguy.example.auth.AuthenticationToken'
-//grails.plugin.springsecurity.rest.token.storage.gorm.tokenValuePropertyName = 'token'
-//grails.plugin.springsecurity.rest.token.storage.gorm.usernamePropertyName = 'username'
+grails.plugin.springsecurity.rememberMe.persistent = true
 
 
 // Added by the JQuery Validation UI plugin:
@@ -259,20 +254,17 @@ twitter {
 }
 
 // Added by the Spring Security Core plugin:
-grails.plugin.springsecurity.requestMap.className = 'com.dtmc.security.Requestmap'
 grails.plugin.springsecurity.securityConfigType = 'InterceptUrlMap'
 
-grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-        '/':                              ['permitAll'],
-        '/index.html':                    ['permitAll'],
-//        '/index.gsp':                     ['permitAll'],
-        '/**/js/**':                      ['permitAll'],
-        '/**/css/**':                     ['permitAll'],
-        '/**/images/**':                  ['permitAll'],
-        '/**/favicon.ico':                ['permitAll']
-]
-
 grails.plugin.springsecurity.interceptUrlMap = [
+        '/':                  ['permitAll'],
+        '/index':             ['permitAll'],
+        '/index.html':         ['permitAll'],
+        '/assets/**':         ['permitAll'],
+        '/**/js/**':          ['permitAll'],
+        '/**/css/**':         ['permitAll'],
+        '/**/images/**':      ['permitAll'],
+        '/**/favicon.ico':    ['permitAll'],
         '/app/**':            ['permitAll'],
         '/login/**':          ['permitAll'],
         '/logout/**':         ['permitAll'],
