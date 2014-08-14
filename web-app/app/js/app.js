@@ -10,7 +10,7 @@ var httpHeaders, message,
             'myApp.controllers']);
 
 app.value('version', '1.0.7');
-app.value('apiUrl', 'http://localhost:8080/dtmc/api');
+app.value('apiUrl', 'http://localhost:8080/dtmc/rest');
 
 app.config(function ($routeProvider, $httpProvider) {
     $routeProvider

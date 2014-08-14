@@ -35,7 +35,7 @@ grails.mime.types = [
 //grails.urlmapping.cache.maxsize = 1000
 
 // What URL patterns should be processed by the resources plugin
-grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*']
+//grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*']
 
 // The default codec used to encode data with ${}
 grails.views.default.codec = "none" // none, html, base64
@@ -259,7 +259,7 @@ grails.plugin.springsecurity.securityConfigType = 'InterceptUrlMap'
 grails.plugin.springsecurity.interceptUrlMap = [
         '/':                  ['permitAll'],
         '/index':             ['permitAll'],
-        '/index.html':         ['permitAll'],
+        '/index.html':        ['permitAll'],
         '/assets/**':         ['permitAll'],
         '/**/js/**':          ['permitAll'],
         '/**/css/**':         ['permitAll'],
@@ -275,12 +275,14 @@ grails.plugin.springsecurity.interceptUrlMap = [
         '/portfolio/**':      ['ROLE_ADMIN'],
         '/portfolioEntry/**': ['ROLE_ADMIN'],
         '/partials/**':       ['permitAll'],
-        '/api/status':        ['permitAll'],
+        '/rest/status':       ['permitAll'],
         '/**':                ['permitAll']
 ]
 
 grails.plugin.springsecurity.useBasicAuth = true
 
 grails.plugin.springsecurity.filterChain.chainMap = [
-'/api/**': 'statelessSecurityContextPersistenceFilter,logoutFilter,authenticationProcessingFilter,customBasicAuthenticationFilter,securityContextHolderAwareRequestFilter,rememberMeAuthenticationFilter,anonymousAuthenticationFilter,basicExceptionTranslationFilter,filterInvocationInterceptor',
+'/rest/**': 'statelessSecurityContextPersistenceFilter,logoutFilter,authenticationProcessingFilter,customBasicAuthenticationFilter,securityContextHolderAwareRequestFilter,rememberMeAuthenticationFilter,anonymousAuthenticationFilter,basicExceptionTranslationFilter,filterInvocationInterceptor',
 ]
+
+cors.url.pattern = '/rest/*'

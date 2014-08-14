@@ -125,6 +125,8 @@ grails.project.dependency.resolution = {
 //        compile ':form-helper:0.2.8'
         compile ":taggable:1.0.1"
 
+        runtime ":cors:1.1.6"
+
 //        compile ":tooltip:0.8"
 
 //        compile(":twitter4j:0.3.2") {

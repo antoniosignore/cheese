@@ -1,12 +1,8 @@
 package com;
 
 import grails.converters.JSON
-import grails.plugin.springsecurity.SpringSecurityUtils
 
 import javax.servlet.http.HttpServletResponse
-
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserCache;
 
 class StatusController {
 
