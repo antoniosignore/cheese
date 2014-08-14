@@ -54,13 +54,12 @@ grails.project.dependency.resolution = {
 
         compile 'jfree:jfreechart:1.0.13'
 
+    	compile "com.google.guava:guava:13.0"
 
-	compile "com.google.guava:guava:13.0"
-
-        runtime group:"org.twitter4j", name:"twitter4j-core", version:"4.0.1"
-        runtime group:"org.twitter4j", name:"twitter4j-async", version:"4.0.1"
-        runtime group:"org.twitter4j", name:"twitter4j-stream", version:"4.0.1"
-
+//        runtime group:"org.twitter4j", name:"twitter4j-core", version:"4.0.1"
+//        runtime group:"org.twitter4j", name:"twitter4j-async", version:"4.0.1"
+//        runtime group:"org.twitter4j", name:"twitter4j-stream", version:"4.0.1"
+//
 
 //        compile 'org.grails:grails-datastore-gorm:3.0.4.RELEASE'
 //        compile 'org.grails:grails-datastore-core:3.0.4.RELEASE'
@@ -73,8 +72,6 @@ grails.project.dependency.resolution = {
 
         build ":tomcat:7.0.52.1"
 
-        // plugins for the compile step
-//        compile ":scaffolding:2.0.2"
         compile ":scaffolding:2.0.2"
         compile ':cache:1.1.1'
 
@@ -82,7 +79,8 @@ grails.project.dependency.resolution = {
         runtime ":hibernate:3.6.10.9" // or ":hibernate4:4.3.4"
         runtime ":database-migration:1.3.8"
         runtime ":jquery:1.11.0.2"
-        runtime ":resources:1.2.7"
+
+//        runtime ":resources:1.2.7"
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0.1"
         //runtime ":cached-resources:1.1"
@@ -105,7 +103,7 @@ grails.project.dependency.resolution = {
 //        runtime ':font-awesome-resources:3.0'
 
 
-        runtime ":raphael:2.0.1"
+//        runtime ":raphael:2.0.1"
 
         compile ':mail:1.0.1', {
             excludes 'spring-test'
@@ -143,7 +141,7 @@ grails.project.dependency.resolution = {
 //        compile ":searchable:0.6.5"
 //        runtime ":cors:1.1.4"
 
-        compile ":arrested:1.31"
+//        compile ":arrested:1.31"
 
     }
 }

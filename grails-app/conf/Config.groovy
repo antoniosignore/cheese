@@ -258,16 +258,14 @@ twitter {
     }
 }
 
-//oauth_token=wRc1Nv5ZgGGNZTbkwP0pFtV9zxjZbBnaeWSQ0mJVxrA&oauth_verifier=PlCCTIm3nQzGx5jCLBw9lHQHRFISq7zzx5HDi5PbQ
-
 // Added by the Spring Security Core plugin:
 grails.plugin.springsecurity.requestMap.className = 'com.dtmc.security.Requestmap'
 grails.plugin.springsecurity.securityConfigType = 'InterceptUrlMap'
 
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         '/':                              ['permitAll'],
-        '/index':                         ['permitAll'],
-        '/index.gsp':                     ['permitAll'],
+        '/index.html':                    ['permitAll'],
+//        '/index.gsp':                     ['permitAll'],
         '/**/js/**':                      ['permitAll'],
         '/**/css/**':                     ['permitAll'],
         '/**/images/**':                  ['permitAll'],
@@ -289,22 +287,8 @@ grails.plugin.springsecurity.interceptUrlMap = [
         '/**':                ['permitAll']
 ]
 
-//grails.plugin.springsecurity.interceptUrlMap = [
-//        '/app/**':             ['permitAll'],
-//        '/**/js/**':          ['permitAll'],
-//        '/**/css/**':         ['permitAll'],
-//        '/**/images/**':      ['permitAll'],
-//        '/**/favicon.ico':    ['permitAll'],
-//        '/login/**':          ['permitAll'],
-//        '/logout/**':         ['permitAll'],
-//        '/api/status':          ['permitAll'],
-//        '/**':				  ['isFullyAuthenticated()']
-//]
-
 grails.plugin.springsecurity.useBasicAuth = true
 
 grails.plugin.springsecurity.filterChain.chainMap = [
-//	'/api/**':'JOINED_FILTERS,-exceptionTranslationFilter',
 '/api/**': 'statelessSecurityContextPersistenceFilter,logoutFilter,authenticationProcessingFilter,customBasicAuthenticationFilter,securityContextHolderAwareRequestFilter,rememberMeAuthenticationFilter,anonymousAuthenticationFilter,basicExceptionTranslationFilter,filterInvocationInterceptor',
-//	'/**': 'JOINED_FILTERS,-basicAuthenticationFilter,-basicExceptionTranslationFilter'
 ]

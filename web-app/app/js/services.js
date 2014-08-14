@@ -1,16 +1,6 @@
 'use strict';
 
-/* Services */
-
-var phonecatServices = angular.module('phonecatServices', ['ngResource']);
-
-phonecatServices.factory('Phone', ['$resource',
-    function ($resource) {
-        return $resource('phones/:phoneId.json', {}, {
-            query: {method: 'GET', params: {phoneId: 'phones'}, isArray: true}
-        });
-    }]);
-
+var as = angular.module('myApp.services', []);
 
 as.service('i18n', function () {
     var self = this;
@@ -101,4 +91,3 @@ as.service('base64', function () {
         }
     };
 })
-
