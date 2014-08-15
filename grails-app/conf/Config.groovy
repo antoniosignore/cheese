@@ -91,7 +91,6 @@ log4j = {
     debug 'org.springframework.security'
 }
 
-
 grails.config.defaults.locations = [KickstartResources]
 
 grails.gorm.default.constraints = {
@@ -276,7 +275,7 @@ grails.plugin.springsecurity.interceptUrlMap = [
         '/portfolioEntry/**': ['ROLE_ADMIN'],
         '/partials/**':       ['permitAll'],
         '/rest/status':       ['permitAll'],
-        '/**':                ['permitAll']
+        '/**':                ['ROLE_ADMIN']
 ]
 
 grails.plugin.springsecurity.useBasicAuth = true
