@@ -3,6 +3,8 @@ package com.netnumeri.server.finance.finpojo.asset
 import com.netnumeri.server.finance.utils.YahooInstantSnapshot
 import com.netnumeri.server.utils.OptionsChain
 
+import grails.rest.Resource;
+
 class Stock extends Asset implements Serializable {
 
     static mapping = {

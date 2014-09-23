@@ -10,6 +10,7 @@ import com.netnumeri.server.finance.ta.*
 import com.netnumeri.server.finance.utils.DateUtils
 import com.netnumeri.server.finance.utils.YahooUtils
 import org.springframework.dao.DataIntegrityViolationException
+import grails.converters.JSON
 
 class StockController {
 
@@ -22,8 +23,7 @@ class StockController {
     }
 
     def list() {
-        params.max = Math.min(params.max ? params.int('max') : 10, 100)
-        [stockInstanceList: Stock.list(params), stockInstanceTotal: Stock.count()]
+        render Stock.list(params) as JSON
     }
 
     def create() {
