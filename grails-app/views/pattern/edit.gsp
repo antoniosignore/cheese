@@ -1,4 +1,4 @@
-<%@ page import="com.netnumeri.server.finance.candlestick.Pattern" %>
+<%@ page import="com.dtmc.candlestick.Pattern" %>
 <!doctype html>
 <html>
 

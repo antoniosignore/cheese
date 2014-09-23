@@ -5,16 +5,6 @@ import com.dtmc.security.SecUserSecRole
 import com.netnumeri.server.enums.*
 import com.netnumeri.server.finance.finpojo.asset.Stock
 import com.netnumeri.server.finance.indicator.UserIndicators
-import com.phonecat.Android
-import com.phonecat.Battery
-import com.phonecat.Camera
-import com.phonecat.Connectivity
-import com.phonecat.Display
-import com.phonecat.Hardware
-import com.phonecat.Phone
-import com.phonecat.PhoneDetail
-import com.phonecat.SizeAndWeight
-import com.phonecat.Storage
 import grails.converters.JSON
 
 class BootStrap {

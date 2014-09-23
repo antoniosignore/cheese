@@ -263,7 +263,6 @@ public class SSAStrategy extends Strategy {
         }
     }
 
-    @Override
     public void evaluatePortfolioOnDate(Date date, Map signals) {
 
         if (date == null) throw new IllegalArgumentException("date cannot be null");
@@ -299,7 +298,6 @@ public class SSAStrategy extends Strategy {
     public static final int WINDOW = 100
     public static final int i = 0
 
-    @Override
     public void evaluateInstrumentOnDate(Date date, Instrument stock) {
 
 //        if (i++ < WINDOW) return;

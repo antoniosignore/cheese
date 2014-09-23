@@ -1,4 +1,4 @@
-package com.netnumeri.server.finance.candlestick
+package com.dtmc.candlestick
 
 import org.springframework.dao.DataIntegrityViolationException
 

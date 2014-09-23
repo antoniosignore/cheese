@@ -91,26 +91,25 @@ log4j = {
     debug 'org.springframework.security'
 }
 
-
 grails.config.defaults.locations = [KickstartResources]
 
 grails.gorm.default.constraints = {
     '*'(nullable: true)
 }
 
-grails {
-    mail {
-        host = "smtp.gmail.com"
-        port = 465
-        username = "antonio.signore@gmail.com"
-        password = "Nicholas1#"
-        props = ["mail.smtp.auth": "true",
-                "mail.smtp.socketFactory.port": "465",
-                "mail.smtp.socketFactory.class": "javax.net.ssl.SSLSocketFactory",
-                "mail.smtp.socketFactory.fallback": "false"]
-
-    }
-}
+//grails {
+//    mail {
+//        host = "smtp.gmail.com"
+//        port = 465
+//        username = "antonio.signore@gmail.com"
+//        password = "Nicholas1#"
+//        props = ["mail.smtp.auth": "true",
+//                "mail.smtp.socketFactory.port": "465",
+//                "mail.smtp.socketFactory.class": "javax.net.ssl.SSLSocketFactory",
+//                "mail.smtp.socketFactory.fallback": "false"]
+//
+//    }
+//}
 
 //grails.plugin.cloudfoundry.username = "<your_username>"
 //grails.plugin.cloudfoundry.password = "<pass>"
@@ -139,15 +138,15 @@ grails {
 }
 remove this line */
 
-grails.plugin.springsecurity.securityConfigType = 'InterceptUrlMap'
-grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.dtmc.club.Member'
-grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.dtmc.security.SecUserSecRole'
-grails.plugin.springsecurity.authority.className = 'com.dtmc.security.SecRole'
-grails.plugin.springsecurity.password.algorithm = 'SHA-512'
-grails.plugin.springsecurity.logout.postOnly = false
-grails.plugin.springsecurity.rejectIfNoRule = true
-
-grails.plugin.springsecurity.rememberMe.persistent = true
+//grails.plugin.springsecurity.securityConfigType = 'InterceptUrlMap'
+//grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.dtmc.club.Member'
+//grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.dtmc.security.SecUserSecRole'
+//grails.plugin.springsecurity.authority.className = 'com.dtmc.security.SecRole'
+//grails.plugin.springsecurity.password.algorithm = 'SHA-512'
+//grails.plugin.springsecurity.logout.postOnly = false
+//grails.plugin.springsecurity.rejectIfNoRule = true
+//
+//grails.plugin.springsecurity.rememberMe.persistent = true
 
 
 // Added by the JQuery Validation UI plugin:
@@ -243,46 +242,46 @@ Owner signore
 Owner ID 22603665
  */
 
-twitter {
+//twitter {
 //    disableTwitter4jController = true
-    'default' {
-        OAuthConsumerKey = 'LDdFsq60HIl8chtW3uM0Yl1A7'
-        OAuthConsumerSecret = 'pxJoW4n5Cqou9k3oE5ApEmJKexgvMzTvw0D249mkpJQV45oqD6'
-        OAuthAccessToken = '22603665-hXPuOfxsuLsa5znEEdM1RoAAmBk737Is6ojmG5moh'
-        OAuthAccessTokenSecret = 'F8ctEhrrXvmAwUYYlRRv9LG7KTDsU6qIzS9Lr3t8CqyRy'
-    }
-}
+//    'default' {
+//        OAuthConsumerKey = 'LDdFsq60HIl8chtW3uM0Yl1A7'
+//        OAuthConsumerSecret = 'pxJoW4n5Cqou9k3oE5ApEmJKexgvMzTvw0D249mkpJQV45oqD6'
+//        OAuthAccessToken = '22603665-hXPuOfxsuLsa5znEEdM1RoAAmBk737Is6ojmG5moh'
+//        OAuthAccessTokenSecret = 'F8ctEhrrXvmAwUYYlRRv9LG7KTDsU6qIzS9Lr3t8CqyRy'
+//    }
+//}
+//
+//Added by the Spring Security Core plugin:
+//grails.plugin.springsecurity.securityConfigType = 'InterceptUrlMap'
 
-// Added by the Spring Security Core plugin:
-grails.plugin.springsecurity.securityConfigType = 'InterceptUrlMap'
-
-grails.plugin.springsecurity.interceptUrlMap = [
-        '/':                  ['permitAll'],
-        '/index':             ['permitAll'],
-        '/index.html':        ['permitAll'],
-        '/assets/**':         ['permitAll'],
-        '/**/js/**':          ['permitAll'],
-        '/**/css/**':         ['permitAll'],
-        '/**/images/**':      ['permitAll'],
-        '/**/favicon.ico':    ['permitAll'],
-        '/app/**':            ['permitAll'],
-        '/login/**':          ['permitAll'],
-        '/logout/**':         ['permitAll'],
-        '/home/**':           ['permitAll'],
-        '/trade/**':          ['ROLE_ADMIN'],
-        '/stock/**':          ['ROLE_ADMIN'],
-        '/instrument/**':     ['ROLE_ADMIN'],
-        '/portfolio/**':      ['ROLE_ADMIN'],
-        '/portfolioEntry/**': ['ROLE_ADMIN'],
-        '/partials/**':       ['permitAll'],
-        '/rest/status':       ['permitAll'],
-        '/**':                ['permitAll']
-]
-
-grails.plugin.springsecurity.useBasicAuth = true
-
-grails.plugin.springsecurity.filterChain.chainMap = [
-'/rest/**': 'statelessSecurityContextPersistenceFilter,logoutFilter,authenticationProcessingFilter,customBasicAuthenticationFilter,securityContextHolderAwareRequestFilter,rememberMeAuthenticationFilter,anonymousAuthenticationFilter,basicExceptionTranslationFilter,filterInvocationInterceptor',
-]
-
-cors.url.pattern = '/rest/*'
+//grails.plugin.springsecurity.interceptUrlMap = [
+//        '/':                  ['permitAll'],
+//        '/index':             ['permitAll'],
+//        '/index.html':        ['permitAll'],
+//        '/assets/**':         ['permitAll'],
+//        '/**/js/**':          ['permitAll'],
+//        '/**/css/**':         ['permitAll'],
+//        '/**/images/**':      ['permitAll'],
+//        '/**/favicon.ico':    ['permitAll'],
+//        '/app/**':            ['permitAll'],
+//        '/login/**':          ['permitAll'],
+//        '/logout/**':         ['permitAll'],
+//        '/home/**':           ['permitAll'],
+//        '/trade/**':          ['ROLE_ADMIN'],
+//        '/stock/**':          ['ROLE_ADMIN'],
+//        '/instrument/**':     ['ROLE_ADMIN'],
+//        '/portfolio/**':      ['ROLE_ADMIN'],
+//        '/portfolioEntry/**': ['ROLE_ADMIN'],
+//        '/partials/**':       ['permitAll'],
+//        '/rest/status':       ['permitAll'],
+//        '/**':                ['ROLE_ADMIN']
+//]
+//
+//grails.plugin.springsecurity.useBasicAuth = true
+//
+//grails.plugin.springsecurity.filterChain.chainMap = [
+//'/rest/**': 'statelessSecurityContextPersistenceFilter,logoutFilter,authenticationProcessingFilter,customBasicAuthenticationFilter,securityContextHolderAwareRequestFilter,rememberMeAuthenticationFilter,anonymousAuthenticationFilter,basicExceptionTranslationFilter,filterInvocationInterceptor',
+//]
+//
+//cors.url.pattern = '/rest/*'

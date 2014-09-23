@@ -4,9 +4,7 @@ import com.netnumeri.server.enums.ConfirmationTypeEnum
 import com.netnumeri.server.enums.PatternTypeEnum
 import com.netnumeri.server.enums.RelevanceTypeEnum
 import com.netnumeri.server.enums.ReliabilityTypeEnum
-import com.netnumeri.server.finance.candlestick.Pattern
-import com.netnumeri.server.finance.finpojo.Daily
-
+import com.dtmc.candlestick.Pattern
 
 class StrategiesJob {
 

@@ -1,9 +1,7 @@
-package com.netnumeri.server.finance.candlestick
+package com.dtmc.candlestick
 
 import com.netnumeri.server.enums.*
 import com.netnumeri.server.enums.RelevanceTypeEnum
-
-import java.sql.Clob
 
 class Pattern {
 
